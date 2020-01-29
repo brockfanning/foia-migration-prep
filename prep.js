@@ -19,6 +19,7 @@ const outputFolder = path.join('output', year)
 const files = fs.readdirSync(inputFolder)
 for (const file of files) {
     const inputFilePath = path.join(inputFolder, file)
+    console.log('Reading ' + inputFilePath)
     let xml = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
     for (var search in replacements) {
         const contains = xml.includes(search)
@@ -33,43 +34,34 @@ for (const file of files) {
     }
     
     // Get the nc:OrganizationAbbreviationText element.
-    const abbreviationElement = getElement('nc:OrganizationAbbreviationText', xml)
-    console.log(abbreviationElement)
-    const abbreviation = getValue(abbreviationElement)
-    console.log(abbreviation) 
+    for (const match of getElements('nc:OrganizationAbbreviationText', xml)) {
+        console.log(getValue(match))
+    }
+   
+    //const abbreviationElement = getElement('nc:OrganizationAbbreviationText', xml)
+    //console.log(abbreviationElement)
+    //const abbreviation = getValue(abbreviationElement)
+    //console.log(abbreviation) 
 
     const outputFilePath = path.join(outputFolder, file)
     //fs.writeFileSync(outputFilePath, xml)
 }
 
-// Given a huge chunk of XML, get the full XML of a single unique element.
-function getElement(elementName, contents) {
-    const open = '<' + elementName + '>'
-    const close = '</' + elementName + '>'
-
-    // Confirm that the element is unique.
-    const parts = contents.split(open)
-    if (parts.length > 2) {
-      console.log('Warning - ' + elementName + ' is not a unique element!')
-    }
-
-    const inner = contents.substring(
-        contents.lastIndexOf(open) + open.length,
-        contents.lastIndexOf(close)
-    )
-    const outer = open + inner + close
-    // Safety check.
-    if (!contents.includes(outer)) {
-        console.log('Oops.')
-    }
-    return outer
-}
-
 // Given the full XML of a single element, get the value of that element.
 function getValue(element) {
-    const inner = element.substring(
+    return element.substring(
         element.indexOf('>') + 1,
         element.indexOf('</')
     )
-    return inner
+}
+
+// Given an element name, get an array of objects, each containing the full
+// string of the element and its contents.
+function getElements(elementName, contents) {
+    return contents.match(getRegex(elementName))
+}
+
+// Get a regex to find an XML tag.
+function getRegex(elementName) {
+    return new RegExp('<\s*' + elementName + '[^>]*>(.*?)<\s*/\s*' + elementName + '>', 'g')
 }
