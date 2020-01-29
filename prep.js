@@ -12,6 +12,9 @@ const replacements = {
   '</foia:DocumentFiscalYear>': '</foia:DocumentFiscalYearDate>'
 }
 
+const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
+const drupalComponents = JSON.parse(fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' }))
+
 const year = args[0]
 const inputFolder = path.join('input', year)
 const outputFolder = path.join('output', year)
@@ -33,9 +36,20 @@ for (const file of files) {
         xml = xml.split(search).join(replace)
     }
     
+    let agencyAbbreviation = ''
+
     // Get the nc:OrganizationAbbreviationText element.
     for (const match of getElements('nc:OrganizationAbbreviationText', xml)) {
-        console.log(getValue(match))
+        const abbreviation = getValue(match)
+        // Assume the agency abbreviation is the first.
+        if (agencyAbbreviation === '') {
+            agencyAbbreviation = abbreviation
+
+            if (!agencyAbbreviationExists(abbreviation)) {
+                console.log('Agency abbreviation not found: ' + abbreviation)
+            }
+            break;
+        }
     }
    
     //const abbreviationElement = getElement('nc:OrganizationAbbreviationText', xml)
@@ -64,4 +78,20 @@ function getElements(elementName, contents) {
 // Get a regex to find an XML tag.
 function getRegex(elementName) {
     return new RegExp('<\s*' + elementName + '[^>]*>(.*?)<\s*/\s*' + elementName + '>', 'g')
+}
+
+// Look up in the list of agencies whether an abbreviation is there.
+function agencyAbbreviationExists(abbreviation) {
+    const matches = drupalAgencies.filter(agency => {
+        return agency.field_agency_abbreviation === abbreviation
+    })
+    return matches.length > 0
+}
+
+// Look up in the list of agency components where an abbreviation is there.
+function agencyComponentAbbreviationExists(abbreviation) {
+    const matches = drupalComponents.filter(component => {
+        return component.field_agency_comp_abbreviation === abbreviation
+    })
+    return matches.length > 0
 }
