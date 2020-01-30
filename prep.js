@@ -22,7 +22,6 @@ const outputFolder = path.join('output', year)
 const files = fs.readdirSync(inputFolder)
 for (const file of files) {
     const inputFilePath = path.join(inputFolder, file)
-    console.log('Reading ' + inputFilePath)
     let xml = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
     for (var search in replacements) {
         const contains = xml.includes(search)
@@ -30,7 +29,7 @@ for (const file of files) {
             // Do nothing.
         }
         else {
-            console.log('The string "' + search + '" was not found in ' + inputFilePath + '.')
+            logError('Replacement string "' + search + '" was not found', file)
         }
         const replace = replacements[search]
         xml = xml.split(search).join(replace)
@@ -46,7 +45,7 @@ for (const file of files) {
             agencyAbbreviation = abbreviation
 
             if (!agencyAbbreviationExists(abbreviation)) {
-                console.log('Agency abbreviation not found: ' + abbreviation)
+                logError('Agency abbreviation not found: ' + abbreviation, file)
             }
             break;
         }
@@ -94,4 +93,9 @@ function agencyComponentAbbreviationExists(abbreviation) {
         return component.field_agency_comp_abbreviation === abbreviation
     })
     return matches.length > 0
+}
+
+// Error logging.
+function logError(message, file) {
+  console.log(message + ' (' + file + ')')
 }
