@@ -29,7 +29,7 @@ for (const file of files) {
             // Do nothing.
         }
         else {
-            logError('Replacement string "' + search + '" was not found', file)
+            //logError('Replacement string "' + search + '" was not found', file)
         }
         const replace = replacements[search]
         xml = xml.split(search).join(replace)
@@ -38,16 +38,22 @@ for (const file of files) {
     let agencyAbbreviation = ''
 
     // Get the nc:OrganizationAbbreviationText element.
-    for (const match of getElements('nc:OrganizationAbbreviationText', xml)) {
-        const abbreviation = getValue(match)
-        // Assume the agency abbreviation is the first.
-        if (agencyAbbreviation === '') {
-            agencyAbbreviation = abbreviation
+    const matches = getElements('nc:OrganizationAbbreviationText', xml)
+    if (!matches) {
+        logError('No abbreviation element', file)
+    }
+    else {
+        for (const match of getElements('nc:OrganizationAbbreviationText', xml)) {
+            const abbreviation = getValue(match)
+            // Assume the agency abbreviation is the first.
+            if (agencyAbbreviation === '') {
+                agencyAbbreviation = abbreviation
 
-            if (!agencyAbbreviationExists(abbreviation)) {
-                logError('Agency abbreviation not found: ' + abbreviation, file)
+                if (!agencyAbbreviationExists(abbreviation)) {
+                    logError('"' + abbreviation + '": "",//', file)
+                }
+                break;
             }
-            break;
         }
     }
    
