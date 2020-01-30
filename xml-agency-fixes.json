@@ -18,9 +18,9 @@
     "U.S. RRB": "RRB",
     "USCO": "CO",
     "NCD\r\n": "NCD",
-    "OFHEO": "FIXME: Office of Federal Housing Enterprise Oversight",
-    "CFP/Committee": "FIXME: Committee for Purchase from People Who Are Blind or Severely Disabled",
+    "OFHEO": "HUD",
+    "CFP/Committee": "CPPBSD",
     "SIGIR": "FIXME: Special Inspector General for Iraq Reconstruction",
-    "BBG": "FIXME: BROADCASTING BOARD OF GOVERNORS",
+    "BBG": "USAGM",
     "RATB": "FIXME: Recovery Accountability and Transparency Board"
 }
