@@ -58,7 +58,11 @@ for (const file of files) {
                     const fixedMatch = match.replace(abbreviation, agencyFixes[abbreviation])
                     abbreviationReplacements[match] = fixedMatch 
                 }
-                break;
+            }
+            else {
+                if (!agencyComponentAbbreviationExists(abbreviation)) {
+                    logError('Abbreviation not found in Drupal: "' + abbreviation + '"', file)
+                }
             }
         }
     }
@@ -91,7 +95,7 @@ function getElements(elementName, contents) {
 
 // Get a regex to find an XML tag.
 function getRegex(elementName) {
-    return new RegExp('<\s*' + elementName + '[^>]*>([^]*)<\s*/\s*' + elementName + '>', 'g')
+    return new RegExp('<\s*' + elementName + '[^>]*>([^<]*)<\s*/\s*' + elementName + '>', 'g')
 }
 
 // Look up in the list of agencies whether an abbreviation is there.
