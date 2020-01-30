@@ -14,6 +14,7 @@ const replacements = {
 
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
 const drupalComponents = JSON.parse(fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' }))
+const agencyFixes = JSON.parse(fs.readFileSync('xml-agency-fixes.json', { encoding: 'utf-8' }))
 
 const year = args[0]
 const inputFolder = path.join('input', year)
@@ -36,6 +37,7 @@ for (const file of files) {
     }
     
     let agencyAbbreviation = ''
+    const abbreviationReplacements = {}
 
     // Get the nc:OrganizationAbbreviationText element.
     const matches = getElements('nc:OrganizationAbbreviationText', xml)
@@ -50,13 +52,20 @@ for (const file of files) {
                 agencyAbbreviation = abbreviation
 
                 if (!agencyAbbreviationExists(abbreviation)) {
-                    logError('"' + abbreviation + '": "",//', file)
+                    if (!agencyFixes[abbreviation]) {
+                        logError('Abbreviation not found in Drupal or in fixes: "' + abbreviation + '"', file)
+                    }
+                    const fixedMatch = match.replace(abbreviation, agencyFixes[abbreviation])
+                    abbreviationReplacements[match] = fixedMatch 
                 }
                 break;
             }
         }
     }
-   
+ 
+    if (Object.keys(abbreviationReplacements).length > 0) {
+        //console.log(abbreviationReplacements)
+    }
     //const abbreviationElement = getElement('nc:OrganizationAbbreviationText', xml)
     //console.log(abbreviationElement)
     //const abbreviation = getValue(abbreviationElement)
@@ -82,7 +91,7 @@ function getElements(elementName, contents) {
 
 // Get a regex to find an XML tag.
 function getRegex(elementName) {
-    return new RegExp('<\s*' + elementName + '[^>]*>(.*?)<\s*/\s*' + elementName + '>', 'g')
+    return new RegExp('<\s*' + elementName + '[^>]*>([^]*)<\s*/\s*' + elementName + '>', 'g')
 }
 
 // Look up in the list of agencies whether an abbreviation is there.
