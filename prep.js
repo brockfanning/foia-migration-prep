@@ -15,6 +15,7 @@ const replacements = {
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
 const drupalComponents = JSON.parse(fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' }))
 const agencyFixes = JSON.parse(fs.readFileSync('xml-agency-fixes.json', { encoding: 'utf-8' }))
+const agencyComponentFixes = JSON.parse(fs.readFileSync('xml-agency-component-fixes.json', { encoding: 'utf-8' }))
 
 const year = args[0]
 const inputFolder = path.join('input', year)
@@ -55,13 +56,36 @@ for (const file of files) {
                     if (!agencyFixes[abbreviation]) {
                         logError('Abbreviation not found in Drupal or in fixes: "' + abbreviation + '"', file)
                     }
-                    const fixedMatch = match.replace(abbreviation, agencyFixes[abbreviation])
+                    const fixedAbbrev = agencyFixes[abbreviation]
+                    const fixedMatch = match.replace(abbreviation, fixedAbbrev)
                     abbreviationReplacements[match] = fixedMatch 
+                    agencyAbbreviation = fixedAbbrev
                 }
             }
             else {
                 if (!agencyComponentAbbreviationExists(abbreviation)) {
-                    logError('Abbreviation not found in Drupal: "' + abbreviation + '"', file)
+                    let fixedAbbrev = ''
+                    // Try trimming whitespace.
+                    const trimmedAbbreviation = abbreviation.trim()
+                    if (agencyComponentAbbreviationExists(trimmedAbbreviation)) {
+                        fixedAbbrev = trimmedAbbreviation
+                    }
+                    else if (!agencyComponentFixes[abbreviation]) {
+                        console.log([
+                            '"' + agencyAbbreviation + '"',
+                            '"' + abbreviation + '"',
+                            '""',
+                            '"' + file + '"',
+                        ].join(','))
+                    }
+                    else {
+                        fixedAbbrev = agencyComponentFixes[abbreviation]
+                    }
+                    if (fixedAbbrev !== '') {
+                        const fixedMatch = match.replace(abbreviation, fixedAbbrev)
+                        abbreviationReplacements[match] = fixedMatch
+                    }
+                    //logError('Abbreviation not found in Drupal: "' + abbreviation + '"', file)
                 }
             }
         }
