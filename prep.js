@@ -65,8 +65,8 @@ for (const file of files) {
             else {
                 if (!agencyComponentAbbreviationExists(abbreviation)) {
                     let fixedAbbrev = ''
-                    // Try trimming whitespace.
-                    const trimmedAbbreviation = abbreviation.trim()
+                    // Try fixing common problems.
+                    const trimmedAbbreviation = trimAbbreviation(abbreviation)
                     if (agencyComponentAbbreviationExists(trimmedAbbreviation)) {
                         fixedAbbrev = trimmedAbbreviation
                     }
@@ -141,4 +141,19 @@ function agencyComponentAbbreviationExists(abbreviation) {
 // Error logging.
 function logError(message, file) {
   console.log(message + ' (' + file + ')')
+}
+
+// Fix common problems in agency component abbreviations.
+function trimAbbreviation(abbreviation) {
+  // First trim whitespace.
+  abbreviation = abbreviation.trim()
+  // Next look for a second word with parentheses.
+  const words = abbreviation.split(' ')
+  if (words.length > 1 && words[1].startsWith('(') && words[1].endsWith(')')) {
+    abbreviation = words[0]
+  }
+  // Unescape ampersands, since it was in XML.
+  abbreviation = abbreviation.replace('&amp;', '&')
+
+  return abbreviation
 }
