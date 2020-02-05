@@ -63,14 +63,14 @@ for (const file of files) {
                 }
             }
             else {
-                if (!agencyComponentAbbreviationExists(abbreviation)) {
+                if (!agencyComponentAbbreviationExists(agencyAbbreviation, abbreviation)) {
                     let fixedAbbrev = ''
                     // Try fixing common problems.
                     const trimmedAbbreviation = trimAbbreviation(abbreviation)
-                    if (agencyComponentAbbreviationExists(trimmedAbbreviation)) {
+                    if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
                         fixedAbbrev = trimmedAbbreviation
                     }
-                    else if (!agencyComponentFixes[abbreviation]) {
+                    else if (!agencyComponentAbbreviationFix(agencyAbbreviation, abbreviation)) {
                         console.log([
                             '"' + agencyAbbreviation + '"',
                             '"' + abbreviation + '"',
@@ -79,7 +79,7 @@ for (const file of files) {
                         ].join(','))
                     }
                     else {
-                        fixedAbbrev = agencyComponentFixes[abbreviation]
+                        fixedAbbrev = agencyComponentAbbreviationFix(agencyAbbreviation, abbreviation)
                     }
                     if (fixedAbbrev !== '') {
                         const fixedMatch = match.replace(abbreviation, fixedAbbrev)
@@ -131,9 +131,10 @@ function agencyAbbreviationExists(abbreviation) {
 }
 
 // Look up in the list of agency components where an abbreviation is there.
-function agencyComponentAbbreviationExists(abbreviation) {
+function agencyComponentAbbreviationExists(agencyAbbreviation, componentAbbreviation) {
     const matches = drupalComponents.filter(component => {
-        return component.field_agency_comp_abbreviation === abbreviation
+        return component.field_agency_comp_abbreviation === componentAbbreviation &&
+               component.field_agency_abbreviation === agencyAbbreviation
     })
     return matches.length > 0
 }
@@ -156,4 +157,24 @@ function trimAbbreviation(abbreviation) {
   abbreviation = abbreviation.replace('&amp;', '&')
 
   return abbreviation
+}
+
+// Get a fix for an agency component abbreviation.
+function agencyComponentAbbreviationFix(agencyAbbreviation, incorrectComponentAbbreviation) {
+  // To make the fix mapping cleaner, assume that they will be fixed according to the
+  // trimAbbreviation function. (No "&amp;" and no parentheses.)
+  incorrectComponentAbbreviation = trimAbbreviation(incorrectComponentAbbreviation)
+  if (!agencyComponentFixes[agencyAbbreviation]) {
+    return false
+  }
+  if (!agencyComponentFixes[agencyAbbreviation][incorrectComponentAbbreviation]) {
+    return false
+  }
+  const fix = agencyComponentFixes[agencyAbbreviation][incorrectComponentAbbreviation]
+  // Before returning the fix, make sure it is valid.
+  if (!agencyComponentAbbreviationExists(agencyAbbreviation, fix)) {
+    console.log('Fixed abbreviation did not actual exist: "' + incorrectComponentAbbreviation + '"=>"' + fix + '"')
+    return false
+  }
+  return fix
 }

@@ -1,1 +1,35 @@
-{}
+{
+  "DOJ": {
+    "Pardon Attorney": "PARDON"
+  },
+  "DOS": {
+    "DoS": "DOS"
+  },
+  "DOE": {
+    "NNSA/AL": "NNSA",
+    "RL": "ROO",
+    "SROO": "SRO"
+  },
+  "NASA": {
+    "HQS": "HQ"
+  },
+  "VA": {
+    "A&MM": "OAL",
+    "OC&LA": "C&LA",
+    "OCFM": "CFM",
+    "ODM&EEO": "ODI",
+    "OHRM": "HRM",
+    "OI&T": "OIT",
+    "S&LE": "OSP"
+  },
+  "DHS": {
+    "NPPD": "CISA"
+  },
+  "DOL": {
+    "ADJ BDS": "Adj Bds"
+  },
+  "DoD": {
+    "DoDIG": "DoD IG",
+    "PACOM": "INDO-PACOM"
+  }
+}
