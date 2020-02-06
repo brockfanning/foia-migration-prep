@@ -31,5 +31,40 @@
   "DoD": {
     "DoDIG": "DoD IG",
     "PACOM": "INDO-PACOM"
+  },
+  "DOI": {
+    "Appeals": "FOIA/PA Appeals"
+  },
+  "ED": {
+    "OCR-Boston": "OCR - 1 Boston",
+    "OCR-New York": "OCR - 2 New York",
+    "OCR-Philadelphia": "OCR - 3 Philadelphia",
+    "OCR-Atlanta": "OCR - 4 Atlanta",
+    "OCR-Chicago": "OCR - 5 Chicago",
+    "OCR-Dallas": "OCR - 6 Dallas",
+    "OCR-Kansas City": "OCR - 7 Kansas City",
+    "OCR-Denver": "OCR - 8 Denver",
+    "OCR-San Francisco": "OCR - 9 San Francisco",
+    "OCR-Seattle": "OCR - 10 Seattle",
+    "OCR-Metro": "OCR - Metro D.C.",
+    "OCR-Cleveland": "OCR - 12 Cleveland"
+  },
+  "EPA": {
+    "Region 1": "Region 01",
+    "Region 2": "Region 02",
+    "Region 3": "Region 03",
+    "Region 4": "Region 04",
+    "Region 5": "Region 05",
+    "Region 6": "Region 06",
+    "Region 7": "Region 07",
+    "Region 8": "Region 08",
+    "Region 9": "Region 09",
+    "Region 10": "Region 10"
+  },
+  "HUD": {
+    "IG": "OIG"
+  },
+  "DOC": {
+    "AGC/Admin.": "InfoLaw"
   }
 }

@@ -72,7 +72,7 @@ for (const file of files) {
                     }
                     else if (!agencyComponentAbbreviationFix(agencyAbbreviation, abbreviation)) {
                         console.log([
-                            '"' + agencyAbbreviation + '"',
+                            '"' + getAgencyName(agencyAbbreviation) + '"',
                             '"' + abbreviation + '"',
                             '""',
                             '"' + file + '"',
@@ -177,4 +177,15 @@ function agencyComponentAbbreviationFix(agencyAbbreviation, incorrectComponentAb
     return false
   }
   return fix
+}
+
+// Get an agency name from abbreviation.
+function getAgencyName(agencyAbbreviation) {
+    const matches = drupalAgencies.filter(agency => {
+        return agency.field_agency_abbreviation === agencyAbbreviation
+    })
+    if (matches.length < 1) {
+        console.log('Error, could not find agency ' + agencyAbbreviation)
+    }
+    return matches[0].name
 }
