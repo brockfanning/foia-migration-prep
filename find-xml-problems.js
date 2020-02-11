@@ -13,7 +13,16 @@ const replacements = {
 }
 
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
-const drupalComponents = JSON.parse(fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' }))
+
+// Import the components. Because these come from JSON in Drupal we have to process them
+// a bit so that they match what will be in the XML.
+let drupalComponentsJson = fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' });
+drupalComponentsJson = drupalComponentsJson.replace(/\\u0026/g, '&')
+drupalComponentsJson = drupalComponentsJson.replace(/&amp;/g, '&')
+drupalComponentsJson = drupalComponentsJson.replace(/&#039;/g, "'")
+drupalComponentsJson = drupalComponentsJson.replace(/\\u2013/g, "–")
+drupalComponentsJson = drupalComponentsJson.replace(/\\\//g, "/")
+const drupalComponents = JSON.parse(drupalComponentsJson)
 const agencyFixes = JSON.parse(fs.readFileSync('xml-agency-fixes.json', { encoding: 'utf-8' }))
 const agencyComponentFixes = JSON.parse(fs.readFileSync('xml-agency-component-fixes.json', { encoding: 'utf-8' }))
 
