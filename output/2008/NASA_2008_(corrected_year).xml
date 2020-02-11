@@ -53,7 +53,7 @@
 			<nc:OrganizationName>Stennis Space Center</nc:OrganizationName>
 		</nc:OrganizationSubUnit>
 		<nc:OrganizationSubUnit s:id="ORG12">
-			<nc:OrganizationAbbreviationText>HQS</nc:OrganizationAbbreviationText>
+			<nc:OrganizationAbbreviationText>HQ</nc:OrganizationAbbreviationText>
 			<nc:OrganizationName>NASA Headquarters</nc:OrganizationName>
 		</nc:OrganizationSubUnit>
 		<nc:OrganizationSubUnit s:id="ORG13">
@@ -65,7 +65,7 @@
 			<nc:OrganizationName>Office of General Counsel (International Law Division):  (Appeals and Litigation Only)</nc:OrganizationName>
 		</nc:OrganizationSubUnit>
 	</nc:Organization>
-	<foia:DocumentFiscalYear>2008</foia:DocumentFiscalYear>
+	<foia:DocumentFiscalYearDate>2008</foia:DocumentFiscalYearDate>
 	<foia:Exemption3StatuteSection>
 		<foia:ReliedUponStatute s:id="ES8">
 			<j:StatuteDescriptionText>10 USC 2305(g)</j:StatuteDescriptionText>

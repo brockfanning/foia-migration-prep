@@ -57,7 +57,7 @@
 			<nc:OrganizationName>Saint Lawrence Seaway Development Corporation</nc:OrganizationName>
 		</nc:OrganizationSubUnit>
 	</nc:Organization>
-	<foia:DocumentFiscalYear>2008</foia:DocumentFiscalYear>
+	<foia:DocumentFiscalYearDate>2008</foia:DocumentFiscalYearDate>
 	<foia:Exemption3StatuteSection>
 		<foia:ReliedUponStatute s:id="ES8">
 			<j:StatuteDescriptionText>5 U.S.C. App. 4, 107</j:StatuteDescriptionText>
