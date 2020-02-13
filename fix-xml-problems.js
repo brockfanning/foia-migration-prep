@@ -120,11 +120,23 @@ for (const file of files) {
             logError('Replacement string "' + search + '" was not found', file)
         }
         const replace = abbreviationReplacements[search]
-        xml = xml.split(search).join(replace)
+        xml = xml.split(search).join(escapeXml(replace))
     }
 
     const outputFilePath = path.join(outputFolder, file)
     fs.writeFileSync(outputFilePath, xml)
+}
+
+function escapeXml(unsafe) {
+    return unsafe.replace(/[<>&'"]/g, function (c) {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+        }
+    });
 }
 
 // Given the full XML of a single element, get the value of that element.
