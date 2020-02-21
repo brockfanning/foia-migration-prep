@@ -3,13 +3,84 @@ const fs = require('fs')
 
 const args = process.argv.slice(2)
 if (args.length < 1) {
-  console.log('Please indicate a year. Example: node prep.js 2008')
-  return
+    console.log('Please indicate a year. Example: node prep.js 2008')
+    return
 }
 
 const replacements = {
-  '<foia:DocumentFiscalYear>': '<foia:DocumentFiscalYearDate>',
-  '</foia:DocumentFiscalYear>': '</foia:DocumentFiscalYearDate>'
+    '<foia:DocumentFiscalYear>': '<foia:DocumentFiscalYearDate>',
+    '</foia:DocumentFiscalYear>': '</foia:DocumentFiscalYearDate>',
+    '<foia:Exemption3StatuteSection/>': `
+        <foia:Exemption3StatuteSection>
+            <foia:ReliedUponStatute s:id="ES8">
+                <j:StatuteDescriptionText>N/A</j:StatuteDescriptionText>
+                <foia:ReliedUponStatuteInformationWithheldText>N/A</foia:ReliedUponStatuteInformationWithheldText>
+                <nc:Case>
+                    <nc:CaseTitleText>N/A</nc:CaseTitleText>
+                </nc:Case>
+            </foia:ReliedUponStatute>
+            <foia:ReliedUponStatuteOrganizationAssociation>
+                <foia:ComponentDataReference s:ref="ES8"/>
+                <nc:OrganizationReference s:ref="ORG0"/>
+                <foia:ReliedUponStatuteQuantity>0</foia:ReliedUponStatuteQuantity>
+            </foia:ReliedUponStatuteOrganizationAssociation>
+        </foia:Exemption3StatuteSection>
+    `,
+    '<foia:RequestDenialOtherReasonSection/>': `
+        <foia:RequestDenialOtherReasonSection>
+            <foia:ComponentOtherDenialReason s:id="CODR8">
+                <foia:OtherDenialReason>
+                    <foia:OtherDenialReasonDescriptionText>N/A</foia:OtherDenialReasonDescriptionText>
+                    <foia:OtherDenialReasonQuantity>0</foia:OtherDenialReasonQuantity>
+                </foia:OtherDenialReason>
+                <foia:ComponentOtherDenialReasonQuantity>0</foia:ComponentOtherDenialReasonQuantity>
+            </foia:ComponentOtherDenialReason>
+            <foia:OtherDenialReasonOrganizationAssociation>
+                <foia:ComponentDataReference s:ref="CODR8"/>
+                <nc:OrganizationReference s:ref="ORG0"/>
+            </foia:OtherDenialReasonOrganizationAssociation>
+        </foia:RequestDenialOtherReasonSection>
+    `,
+    '<foia:ComponentAppliedExemptions/>': '<foia:ComponentAppliedExemptions s:id="ADE1">N/A</foia:ComponentAppliedExemptions>',
+    '<foia:AppealDenialOtherReasonSection/>': `
+        <foia:AppealDenialOtherReasonSection>
+            <foia:ComponentOtherDenialReason s:id="ADOR8">
+                <foia:OtherDenialReason>
+                    <foia:OtherDenialReasonDescriptionText>N/A</foia:OtherDenialReasonDescriptionText>
+                    <foia:OtherDenialReasonQuantity>0</foia:OtherDenialReasonQuantity>
+                </foia:OtherDenialReason>
+                <foia:ComponentOtherDenialReasonQuantity>0</foia:ComponentOtherDenialReasonQuantity>
+            </foia:ComponentOtherDenialReason>
+            <foia:OtherDenialReasonOrganizationAssociation>
+                <foia:ComponentDataReference s:ref="ADOR8"/>
+                <nc:OrganizationReference s:ref="ORG0"/>
+            </foia:OtherDenialReasonOrganizationAssociation>
+        </foia:AppealDenialOtherReasonSection>
+    `,
+    '<foia:OldestPendingItems/>': `
+        <foia:OldestPendingItems s:id="OPA10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>0</foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
+        </foia:OldestPendingItems>
+    `,
+    '<foia:OldestPendingItems/>': `
+        <foia:OldestPendingItems s:id="OPR10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>0</foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
+        </foia:OldestPendingItems>
+    `,
+    '<foia:OldestPendingItems/>': `
+        <foia:OldestPendingItems s:id="OPC10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>0</foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
+        </foia:OldestPendingItems>
+    `,
 }
 
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
