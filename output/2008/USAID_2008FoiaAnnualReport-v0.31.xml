@@ -13,4 +13,17 @@
                 <nc:OrganizationReference s:ref="ORG0"/>
             </foia:OtherDenialReasonOrganizationAssociation>
         </foia:AppealDenialOtherReasonSection>
-    <foia:AppealResponseTimeSection/><foia:OldestPendingAppealSection/><foia:ProcessedResponseTimeSection/><foia:InformationGrantedResponseTimeSection/><foia:SimpleResponseTimeIncrementsSection/><foia:ComplexResponseTimeIncrementsSection/><foia:ExpeditedResponseTimeIncrementsSection/><foia:PendingPerfectedRequestsSection/><foia:OldestPendingRequestSection/><foia:ExpeditedProcessingSection/><foia:FeeWaiverSection/><foia:PersonnelAndCostSection/><foia:FeesCollectedSection/><foia:BacklogSection/><foia:ProcessedConsultationSection/><foia:OldestPendingConsultationSection/><foia:ProcessedRequestComparisonSection/><foia:BackloggedRequestComparisonSection/><foia:ProcessedAppealComparisonSection/><foia:BackloggedAppealComparisonSection/></iepd:FoiaAnnualReport>
+    <foia:AppealResponseTimeSection/><foia:OldestPendingAppealSection/><foia:ProcessedResponseTimeSection/><foia:InformationGrantedResponseTimeSection/><foia:SimpleResponseTimeIncrementsSection/><foia:ComplexResponseTimeIncrementsSection/><foia:ExpeditedResponseTimeIncrementsSection/><foia:PendingPerfectedRequestsSection/><foia:OldestPendingRequestSection/><foia:ExpeditedProcessingSection/><foia:FeeWaiverSection/><foia:PersonnelAndCostSection/><foia:FeesCollectedSection/><foia:BacklogSection/>
+        <foia:ProcessedConsultationSection>
+            <foia:ProcessingStatistics s:id="PCN1">
+                <foia:ProcessingStatisticsPendingAtStartQuantity>0</foia:ProcessingStatisticsPendingAtStartQuantity>
+                <foia:ProcessingStatisticsReceivedQuantity>0</foia:ProcessingStatisticsReceivedQuantity>
+                <foia:ProcessingStatisticsProcessedQuantity>0</foia:ProcessingStatisticsProcessedQuantity>
+                <foia:ProcessingStatisticsPendingAtEndQuantity>0</foia:ProcessingStatisticsPendingAtEndQuantity>
+            </foia:ProcessingStatistics>
+            <foia:ProcessingStatisticsOrganizationAssociation>
+                <foia:ComponentDataReference s:ref="PCN1"/>
+                <nc:OrganizationReference s:ref="ORG0"/>
+            </foia:ProcessingStatisticsOrganizationAssociation>
+        </foia:ProcessedConsultationSection>
+    <foia:OldestPendingConsultationSection/><foia:ProcessedRequestComparisonSection/><foia:BackloggedRequestComparisonSection/><foia:ProcessedAppealComparisonSection/><foia:BackloggedAppealComparisonSection/></iepd:FoiaAnnualReport>

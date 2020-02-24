@@ -6677,7 +6677,14 @@
 	</foia:ProcessedConsultationSection>
 	<foia:OldestPendingConsultationSection>
 		<foia:OldestPendingItems s:id="OPC8"/>
-		<foia:OldestPendingItems s:id="OPC10"/>
+		
+        <foia:OldestPendingItems s:id="OPC10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>0</foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
+        </foia:OldestPendingItems>
+    
 		<foia:OldestPendingItems s:id="OPC12"/>
 		<foia:OldestPendingItems s:id="OPC14"/>
 		<foia:OldestPendingItems s:id="OPC16"/>
