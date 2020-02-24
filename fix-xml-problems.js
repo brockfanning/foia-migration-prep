@@ -41,7 +41,7 @@ const replacements = {
             </foia:OtherDenialReasonOrganizationAssociation>
         </foia:RequestDenialOtherReasonSection>
     `,
-    '<foia:ComponentAppliedExemptions/>': '<foia:ComponentAppliedExemptions s:id="ADE1">N/A</foia:ComponentAppliedExemptions>',
+    '<foia:ComponentAppliedExemptions s:id="ADE1"/>': '<foia:ComponentAppliedExemptions s:id="ADE1">N/A</foia:ComponentAppliedExemptions>',
     '<foia:AppealDenialOtherReasonSection/>': `
         <foia:AppealDenialOtherReasonSection>
             <foia:ComponentOtherDenialReason s:id="ADOR8">
@@ -57,7 +57,7 @@ const replacements = {
             </foia:OtherDenialReasonOrganizationAssociation>
         </foia:AppealDenialOtherReasonSection>
     `,
-    '<foia:OldestPendingItems/>': `
+    '<foia:OldestPendingItems s:id="OPA10"/>': `
         <foia:OldestPendingItems s:id="OPA10">
             <foia:OldItem>
                 <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
@@ -65,7 +65,7 @@ const replacements = {
             </foia:OldItem>
         </foia:OldestPendingItems>
     `,
-    '<foia:OldestPendingItems/>': `
+    '<foia:OldestPendingItems s:id="OPR10"/>': `
         <foia:OldestPendingItems s:id="OPR10">
             <foia:OldItem>
                 <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
@@ -73,13 +73,28 @@ const replacements = {
             </foia:OldItem>
         </foia:OldestPendingItems>
     `,
-    '<foia:OldestPendingItems/>': `
+    '<foia:OldestPendingItems s:id="OPC10"/>': `
         <foia:OldestPendingItems s:id="OPC10">
             <foia:OldItem>
                 <foia:OldItemReceiptDate>N/A</foia:OldItemReceiptDate>
                 <foia:OldItemPendingDaysQuantity>0</foia:OldItemPendingDaysQuantity>
             </foia:OldItem>
         </foia:OldestPendingItems>
+    `,
+    // Should this be different?
+    '<foia:ProcessedConsultationSection/>': `
+        <foia:ProcessedConsultationSection>
+            <foia:ProcessingStatistics s:id="PCN1">
+                <foia:ProcessingStatisticsPendingAtStartQuantity>0</foia:ProcessingStatisticsPendingAtStartQuantity>
+                <foia:ProcessingStatisticsReceivedQuantity>0</foia:ProcessingStatisticsReceivedQuantity>
+                <foia:ProcessingStatisticsProcessedQuantity>0</foia:ProcessingStatisticsProcessedQuantity>
+                <foia:ProcessingStatisticsPendingAtEndQuantity>0</foia:ProcessingStatisticsPendingAtEndQuantity>
+            </foia:ProcessingStatistics>
+            <foia:ProcessingStatisticsOrganizationAssociation>
+                <foia:ComponentDataReference s:ref="PCN1"/>
+                <nc:OrganizationReference s:ref="ORG0"/>
+            </foia:ProcessingStatisticsOrganizationAssociation>
+        </foia:ProcessedConsultationSection>
     `,
 }
 
