@@ -83,6 +83,25 @@ const replacements = {
     `,
 }
 
+// In some cases an element has only a footnote, but needs some boilerplate.
+const addIfFootnoteOnly = {
+    'foia:Exemption3StatuteSection': `
+        <foia:ReliedUponStatute s:id="ES8">
+            <j:StatuteDescriptionText>N/A</j:StatuteDescriptionText>
+            <foia:ReliedUponStatuteInformationWithheldText>N/A</foia:ReliedUponStatuteInformationWithheldText>
+            <nc:Case>
+                <nc:CaseTitleText>N/A</nc:CaseTitleText>
+            </nc:Case>
+        </foia:ReliedUponStatute>
+        <foia:ReliedUponStatuteOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ES8"/>
+            <nc:OrganizationReference s:ref="ORG0"/>
+            <foia:ReliedUponStatuteQuantity>0</foia:ReliedUponStatuteQuantity>
+        </foia:ReliedUponStatuteOrganizationAssociation>
+
+    `
+}
+
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
 
 // Import the components. Because these come from JSON in Drupal we have to process them
@@ -105,6 +124,8 @@ const files = fs.readdirSync(inputFolder)
 for (const file of files) {
     const inputFilePath = path.join(inputFolder, file)
     let xml = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
+
+    // Perform the text replacements.
     for (var search in replacements) {
         const contains = xml.includes(search)
         if (contains) {
@@ -115,6 +136,35 @@ for (const file of files) {
         }
         const replace = replacements[search]
         xml = xml.split(search).join(replace)
+    }
+
+    // Look for the footnote-only sections.
+    for (var element in addIfFootnoteOnly) {
+        let foo = getElements(element, xml)
+        if (foo) {
+            console.log(foo.length)
+        }
+        continue
+        let openingTag = '<' + element + '>'
+        let closingTag = '<\/' + element + '>'
+        let tagContents = openingTag + '(.*?)' + closingTag
+        let tagContentsRegex = getRegex(element)
+        //let tagContentsRegex = new RegExp(tagContents, 'g')
+        let results = xml.match(tagContentsRegex)
+        if (results) {
+            results = results.filter(value => value.includes('FootnoteText'))
+
+            //results = results.map(value => value.repace)
+        }
+        if (results && results.length) {
+            console.log(results.length)
+
+
+        }
+        //results = results.map(function (val) {
+        //    //return val.replace(/<\/?b>/g, '');
+        //    return val
+        //});
     }
     
     let agencyAbbreviation = ''
