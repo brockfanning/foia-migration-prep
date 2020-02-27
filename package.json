@@ -1,0 +1,24 @@
+{
+  "name": "foia-migration-prep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "find-ending-year.js",
+  "dependencies": {
+    "xml-formatter": "1.2.0",
+    "xml2json": "0.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brockfanning/foia-migration-prep.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brockfanning/foia-migration-prep/issues"
+  },
+  "homepage": "https://github.com/brockfanning/foia-migration-prep#readme"
+}
