@@ -81,21 +81,6 @@ const replacements = {
             </foia:OldItem>
         </foia:OldestPendingItems>
     `,
-    // Should this be different?
-    '<foia:ProcessedConsultationSection/>': `
-        <foia:ProcessedConsultationSection>
-            <foia:ProcessingStatistics s:id="PCN1">
-                <foia:ProcessingStatisticsPendingAtStartQuantity>0</foia:ProcessingStatisticsPendingAtStartQuantity>
-                <foia:ProcessingStatisticsReceivedQuantity>0</foia:ProcessingStatisticsReceivedQuantity>
-                <foia:ProcessingStatisticsProcessedQuantity>0</foia:ProcessingStatisticsProcessedQuantity>
-                <foia:ProcessingStatisticsPendingAtEndQuantity>0</foia:ProcessingStatisticsPendingAtEndQuantity>
-            </foia:ProcessingStatistics>
-            <foia:ProcessingStatisticsOrganizationAssociation>
-                <foia:ComponentDataReference s:ref="PCN1"/>
-                <nc:OrganizationReference s:ref="ORG0"/>
-            </foia:ProcessingStatisticsOrganizationAssociation>
-        </foia:ProcessedConsultationSection>
-    `,
 }
 
 const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
