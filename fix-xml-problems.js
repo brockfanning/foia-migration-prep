@@ -59,6 +59,7 @@ for (const file of files) {
     addAppealDenialOtherReasonSection(report)
     addProcessedConsultationSection(report)
     addAppealNonExemptionDenialSection(report)
+    addComplexResponseTimeIncrementsSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -262,6 +263,74 @@ function addAppealNonExemptionDenialSection(report) {
     const orgAssociation = 'foia:AppealNonExemptionDenialOrganizationAssociation'
     if (!(subsection in report[section])) {
         report[section][subsection] = { 's:id': sectionId }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addComplexResponseTimeIncrementsSection(report) {
+    const section = 'foia:ComplexResponseTimeIncrementsSection'
+    const sectionId = 'CRT1'
+    const subsection = 'foia:ComponentResponseTimeIncrements'
+    const orgAssociation = 'foia:ResponseTimeIncrementsOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:TimeIncrement': [
+                {
+                    'foia:TimeIncrementCode': { '$t': '1-20' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '21-40' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '41-60' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '61-80' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '81-100' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '101-120' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '121-140' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '141-160' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '161-180' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '181-200' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '201-300' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '301-400' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '400+' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+            ],
+            'TimeIncrementTotalQuantity': { '$t': 0 }
+        }
         report[section][orgAssociation] = getOrgAssociation(sectionId)
     }
 }
