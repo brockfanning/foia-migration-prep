@@ -58,6 +58,7 @@ for (const file of files) {
     addComponentAppliedExemptions(report)
     addAppealDenialOtherReasonSection(report)
     addProcessedConsultationSection(report)
+    //addAppealNonExemptionDenialSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -138,11 +139,12 @@ function addOldItemSections(report) {
     }
     const subsection = 'foia:OldestPendingItems'
     const item = 'foia:OldItem'
+    const orgAssociation = 'foia:OldestPendingItemsOrganizationAssociation'
     for (const [section, sectionId] of Object.entries(sections)) {
         if (section in report) {
             if (!(subsection in report[section])) {
                 report[section][subsection] = { 's:id': sectionId }
-                report[section]['OldestPendingItemsOrganizationAssociation'] = orgAssociation(sectionId)
+                report[section][orgAssociation] = getOrgAssociation(sectionId)
             }
             else if (Array.isArray(report[section][subsection])) {
                 continue
@@ -199,11 +201,12 @@ function addComponentAppliedExemptions(report) {
     }
     const subsection = 'foia:ComponentAppliedExemptions'
     const item = 'foia:AppliedExemption'
+    const orgAssociation = 'foia:ComponentAppliedExemptionsOrganizationAssociation'
     for (const [section, sectionId] of Object.entries(sections)) {
         if (section in report) {
             if (!(subsection in report[section])) {
                 report[section][subsection] = { 's:id': sectionId }
-                report[section]['ComponentAppliedExemptionsOrganizationAssociation'] = orgAssociation(sectionId)
+                report[section][orgAssociation] = getOrgAssociation(sectionId)
             }
             else if (Array.isArray(report[section][subsection])) {
                 continue
@@ -216,9 +219,10 @@ function addComponentAppliedExemptions(report) {
 }
 
 function addAppealDenialOtherReasonSection(report) {
-    section = 'foia:AppealDenialOtherReasonSection'
-    sectionId = 'ADOR8'
-    subsection = 'foia:ComponentOtherDenialReason'
+    const section = 'foia:AppealDenialOtherReasonSection'
+    const sectionId = 'ADOR8'
+    const subsection = 'foia:ComponentOtherDenialReason'
+    const orgAssociation = 'foia:OtherDenialReasonOrganizationAssociation'
     if (!(subsection in report[section])) {
         report[section][subsection] = {
             's:id': sectionId,
@@ -228,14 +232,15 @@ function addAppealDenialOtherReasonSection(report) {
             },
             'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
-        report[section]['foia:OtherDenialReasonOrganizationAssociation'] = orgAssociation(sectionId)
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
     }
 }
 
 function addProcessedConsultationSection(report) {
-    section = 'foia:ProcessedConsultationSection'
-    sectionId = 'PCN1'
-    subsection = 'foia:ProcessingStatistics'
+    const section = 'foia:ProcessedConsultationSection'
+    const sectionId = 'PCN1'
+    const subsection = 'foia:ProcessingStatistics'
+    const orgAssociation = 'foia:ProcessingStatisticsOrganizationAssociation'
     if (!(subsection in report[section])) {
         report[section][subsection] = {
             's:id': sectionId,
@@ -244,14 +249,25 @@ function addProcessedConsultationSection(report) {
             'foia:ProcessingStatisticsProcessedQuantity': { '$t': 0 },
             'foia:ProcessingStatisticsPendingAtEndQuantity': { '$t': 0 },
         }
-        report[section]['foia:ProcessingStatisticsOrganizationAssociation'] = orgAssociation(sectionId)
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addAppealNonExemptionDenialSection(report) {
+    const section = 'foia:AppealNonExemptionDenialSection'
+    const sectionId = 'ANE1'
+    const subsection = 'foia:AppealNonExemptionDenial'
+    const orgAssociation = 'foia:AppealNonExemptionDenialOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = { 's:id': sectionId }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
     }
 }
 
 // ****************** HELPER FUNCTIONS **************************
 
 // Get a blank object for organization association in the XML.
-function orgAssociation(sectionId) {
+function getOrgAssociation(sectionId) {
     return {
         'foia:ComponentDataReference': { 's:ref': sectionId },
         'nc:OrganizationReference': { 's:ref': 'ORG0' }

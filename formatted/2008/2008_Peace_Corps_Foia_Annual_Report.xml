@@ -2417,12 +2417,12 @@
                 </foia:OldItemPendingDaysQuantity>
             </foia:OldItem>
         </foia:OldestPendingItems>
-        <OldestPendingItemsOrganizationAssociation>
+        <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPC10">
             </foia:ComponentDataReference>
             <nc:OrganizationReference s:ref="ORG0">
             </nc:OrganizationReference>
-        </OldestPendingItemsOrganizationAssociation>
+        </foia:OldestPendingItemsOrganizationAssociation>
     </foia:OldestPendingConsultationSection>
     <foia:ProcessedRequestComparisonSection>
         <foia:ProcessingComparison s:id="RPC1">

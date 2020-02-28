@@ -133,12 +133,12 @@
         <foia:ComponentAppliedExemptions s:id="ADE1">
             N/A
         </foia:ComponentAppliedExemptions>
-        <ComponentAppliedExemptionsOrganizationAssociation>
+        <foia:ComponentAppliedExemptionsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="ADE1">
             </foia:ComponentDataReference>
             <nc:OrganizationReference s:ref="ORG0">
             </nc:OrganizationReference>
-        </ComponentAppliedExemptionsOrganizationAssociation>
+        </foia:ComponentAppliedExemptionsOrganizationAssociation>
     </foia:AppealDispositionAppliedExemptionsSection>
     <foia:AppealNonExemptionDenialSection>
     </foia:AppealNonExemptionDenialSection>
@@ -196,12 +196,12 @@
                 </foia:OldItemPendingDaysQuantity>
             </foia:OldItem>
         </foia:OldestPendingItems>
-        <OldestPendingItemsOrganizationAssociation>
+        <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPA10">
             </foia:ComponentDataReference>
             <nc:OrganizationReference s:ref="ORG0">
             </nc:OrganizationReference>
-        </OldestPendingItemsOrganizationAssociation>
+        </foia:OldestPendingItemsOrganizationAssociation>
     </foia:OldestPendingAppealSection>
     <foia:ProcessedResponseTimeSection>
         <foia:ProcessedResponseTime s:id="PRT0">
@@ -651,12 +651,12 @@
                 </foia:OldItemPendingDaysQuantity>
             </foia:OldItem>
         </foia:OldestPendingItems>
-        <OldestPendingItemsOrganizationAssociation>
+        <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPC10">
             </foia:ComponentDataReference>
             <nc:OrganizationReference s:ref="ORG0">
             </nc:OrganizationReference>
-        </OldestPendingItemsOrganizationAssociation>
+        </foia:OldestPendingItemsOrganizationAssociation>
     </foia:OldestPendingConsultationSection>
     <foia:ProcessedRequestComparisonSection>
         <foia:ProcessingComparison s:id="RPC1">
