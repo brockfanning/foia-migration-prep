@@ -124,6 +124,15 @@
         </foia:OtherDenialReasonOrganizationAssociation>
     </foia:RequestDenialOtherReasonSection>
     <foia:RequestDispositionAppliedExemptionsSection>
+        <foia:ComponentAppliedExemptions s:id="RDE1">
+            N/A
+        </foia:ComponentAppliedExemptions>
+        <foia:ComponentAppliedExemptionsOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="RDE1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:ComponentAppliedExemptionsOrganizationAssociation>
     </foia:RequestDispositionAppliedExemptionsSection>
     <foia:ProcessedAppealSection>
     </foia:ProcessedAppealSection>

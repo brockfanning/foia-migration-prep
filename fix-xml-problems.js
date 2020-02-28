@@ -162,42 +162,44 @@ function addOldItemSections(report) {
 }
 
 function addExemption3StatuteSection(report) {
-    if (!('foia:ReliedUponStatute' in report['foia:Exemption3StatuteSection'])) {
-        report['foia:Exemption3StatuteSection']['foia:ReliedUponStatute'] = {
-            's:id': 'ES8',
+    const section = 'foia:Exemption3StatuteSection'
+    const subsection = 'foia:ReliedUponStatute'
+    const sectionId = 'ES8'
+    const orgAssociation = 'foia:ReliedUponStatuteOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
             'j:StatuteDescriptionText': { '$t': 0 },
             'foia:ReliedUponStatuteInformationWithheldText': { '$t': 0 },
             'nc:Case': { 'nc:CaseTitleText': { '$t': 'N/A' } }
         }
-        report['foia:Exemption3StatuteSection']['foia:ReliedUponStatuteOrganizationAssociation'] = {
-            'foia:ComponentDataReference': { 's:ref': 'ES8' },
-            'nc:OrganizationReference': { 's:ref': 'ORG0' },
-            'foia:ReliedUponStatuteQuantity': { '$t': 0 }
-        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+        report[section][orgAssociation]['foia:ReliedUponStatuteQuantity'] = { '$t': 0 }
     }
 }
 
 function addRequestDenialOtherReasonSection(report) {
-    if (!('foia:ComponentOtherDenialReason' in report['foia:RequestDenialOtherReasonSection'])) {
-        report['foia:RequestDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
-            's:id': 'CODR8',
+    const section = 'foia:RequestDenialOtherReasonSection'
+    const subsection = 'foia:ComponentOtherDenialReason'
+    const sectionId = 'CODR8'
+    const orgAssociation = 'foia:OtherDenialReasonOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
             'foia:OtherDenialReason': {
                 'foia:OtherDenialReasonDescriptionText': { '$t': 0 },
                 'foia:OtherDenialReasonQuantity': { '$t': 0 }
             },
             'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
-        report['foia:RequestDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
-            'foia:ComponentDataReference': { 's:ref': 'CODR8' },
-            'nc:OrganizationReference': { 's:ref': 'ORG0' }
-        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
     }
 }
 
 function addComponentAppliedExemptions(report) {
     const sections = {
         'foia:AppealDispositionAppliedExemptionsSection': 'ADE1',
-        'RequestDispositionAppliedExemptionsSection': 'RDE1'
+        'foia:RequestDispositionAppliedExemptionsSection': 'RDE1'
     }
     const subsection = 'foia:ComponentAppliedExemptions'
     const item = 'foia:AppliedExemption'

@@ -117,6 +117,7 @@
     </foia:RequestDenialOtherReasonSection>
     <foia:RequestDispositionAppliedExemptionsSection>
         <foia:ComponentAppliedExemptions s:id="RDE1">
+            N/A
         </foia:ComponentAppliedExemptions>
         <foia:ComponentAppliedExemptionsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="RDE1">
