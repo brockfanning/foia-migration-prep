@@ -27,12 +27,14 @@ const agencyComponentFixes = JSON.parse(fs.readFileSync('xml-agency-component-fi
 const year = args[0]
 const inputFolder = path.join('input', year)
 const outputFolder = path.join('output', year)
+const formattedFolder = path.join('formatted', year)
 const xmlFormatterOptions = { lineSeparator: '\n' }
 
 const files = fs.readdirSync(inputFolder)
 for (const file of files) {
     const inputFilePath = path.join(inputFolder, file)
     const outputFilePath = path.join(outputFolder, file)
+    const formattedFilePath = path.join(formattedFolder, file)
 
     // Import the XML into a JSON object.
     const input = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
@@ -62,7 +64,7 @@ for (const file of files) {
 
     // Format it nicely and write to disk.
     fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xml)
-    //fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
+    fs.writeFileSync(formattedFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
 }
 
 function fixAgency(report) {
@@ -128,14 +130,21 @@ function fixDocumentFiscalYearDate(report) {
 }
 
 function addOldItemSections(report) {
-    const sections = [
-        'foia:OldestPendingAppealSection',
-        'foia:OldestPendingRequestSection',
-        'foia:OldestPendingConsultationSection'
-    ]
-    for (const section of sections) {
-        if (section in report && 'foia:OldestPendingItems' in report[section]) {
-            if (Array.isArray(report[section]['foia:OldestPendingItems'])) {
+    const sections = {
+        'foia:OldestPendingAppealSection': 'OPA10',
+        'foia:OldestPendingRequestSection': 'OPR10',
+        'foia:OldestPendingConsultationSection': 'OPC10',
+    }
+    for (const [section, sectionId] of Object.entries(sections)) {
+        if (section in report) {
+            if (!('foia:OldestPendingItems' in report[section])) {
+                report[section]['foia:OldestPendingItems'] = { 's:id': sectionId }
+                report[section]['OldestPendingItemsOrganizationAssociation'] = {
+                    'foia:ComponentDataReference': { 's:ref': sectionId },
+                    'nc:OrganizationReference': { 's:ref': 'ORG0' },
+                }
+            }
+            else if (Array.isArray(report[section]['foia:OldestPendingItems'])) {
                 continue
             }
             if (!('foia:OldItem' in report[section]['foia:OldestPendingItems'])) {
