@@ -60,6 +60,7 @@ for (const file of files) {
     addProcessedConsultationSection(report)
     addAppealNonExemptionDenialSection(report)
     addComplexResponseTimeIncrementsSection(report)
+    addAppealResponseTimeSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -330,6 +331,23 @@ function addComplexResponseTimeIncrementsSection(report) {
                 },
             ],
             'foia:TimeIncrementTotalQuantity': { '$t': 0 }
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addAppealResponseTimeSection(report) {
+    const section = 'foia:AppealResponseTimeSection'
+    const sectionId = 'ART0'
+    const subsection = 'foia:ResponseTime'
+    const orgAssociation = 'foia:ResponseTimeOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+            'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+            'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+            'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
         }
         report[section][orgAssociation] = getOrgAssociation(sectionId)
     }

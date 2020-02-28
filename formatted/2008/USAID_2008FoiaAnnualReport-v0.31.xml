@@ -383,6 +383,26 @@
         </foia:OtherDenialReasonOrganizationAssociation>
     </foia:AppealDenialOtherReasonSection>
     <foia:AppealResponseTimeSection>
+        <foia:ResponseTime s:id="ART0">
+            <foia:ResponseTimeMedianDaysValue>
+                0
+            </foia:ResponseTimeMedianDaysValue>
+            <foia:ResponseTimeAverageDaysValue>
+                0
+            </foia:ResponseTimeAverageDaysValue>
+            <foia:ResponseTimeLowestDaysValue>
+                0
+            </foia:ResponseTimeLowestDaysValue>
+            <foia:ResponseTimeHighestDaysValue>
+                0
+            </foia:ResponseTimeHighestDaysValue>
+        </foia:ResponseTime>
+        <foia:ResponseTimeOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ART0">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:ResponseTimeOrganizationAssociation>
     </foia:AppealResponseTimeSection>
     <foia:OldestPendingAppealSection>
         <foia:OldestPendingItems s:id="OPA10">
