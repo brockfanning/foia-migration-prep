@@ -52,6 +52,7 @@ for (const file of files) {
     // Fix any elements missing content.
     addOldItemSections(report)
     addExemption3StatuteSection(report)
+    addRequestDenialOtherReasonSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -158,6 +159,23 @@ function addExemption3StatuteSection(report) {
             'foia:ComponentDataReference': { 's:ref': 'ES8' },
             'nc:OrganizationReference': { 's:ref': 'ORG0' },
             'foia:ReliedUponStatuteQuantity': { '$t': '0' }
+        }
+    }
+}
+
+function addRequestDenialOtherReasonSection(report) {
+    if (!('foia:ComponentOtherDenialReason' in report['foia:RequestDenialOtherReasonSection'])) {
+        report['foia:RequestDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
+            's:id': 'CODR8',
+            'foia:OtherDenialReason': {
+                'foia:OtherDenialReasonDescriptionText': { '$t': '0' },
+                'foia:OtherDenialReasonQuantity': { '$t': '0' }
+            },
+            'foia:ComponentOtherDenialReasonQuantity': { '$t': '0' }
+        }
+        report['foia:RequestDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
+            'foia:ComponentDataReference': { 's:ref': 'CODR8' },
+            'nc:OrganizationReference': { 's:ref': 'ORG0' }
         }
     }
 }

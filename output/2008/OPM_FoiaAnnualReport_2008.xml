@@ -111,6 +111,25 @@
         </foia:RequestDispositionOrganizationAssociation>
     </foia:RequestDispositionSection>
     <foia:RequestDenialOtherReasonSection>
+        <foia:ComponentOtherDenialReason s:id="CODR8">
+            <foia:OtherDenialReason>
+                <foia:OtherDenialReasonDescriptionText>
+                    0
+                </foia:OtherDenialReasonDescriptionText>
+                <foia:OtherDenialReasonQuantity>
+                    0
+                </foia:OtherDenialReasonQuantity>
+            </foia:OtherDenialReason>
+            <foia:ComponentOtherDenialReasonQuantity>
+                0
+            </foia:ComponentOtherDenialReasonQuantity>
+        </foia:ComponentOtherDenialReason>
+        <foia:OtherDenialReasonOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="CODR8">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:OtherDenialReasonOrganizationAssociation>
     </foia:RequestDenialOtherReasonSection>
     <foia:RequestDispositionAppliedExemptionsSection>
         <foia:ComponentAppliedExemptions s:id="RDE1">
