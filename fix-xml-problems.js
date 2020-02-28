@@ -37,18 +37,20 @@ for (const file of files) {
     // Import the XML into a JSON object.
     const input = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
     const json = JSON.parse(parser.toJson(input, { reversible: true }))
+    // To make the drilling-down a bit easier.
+    const report = json['iepd:FoiaAnnualReport']
 
     // Fix (and get) the agency abbreviation.
-    const agencyAbbreviation = fixAgency(json)
+    const agencyAbbreviation = fixAgency(report)
 
     // Fix all the agency component abbreviations.
-    fixAgencyComponents(json, agencyAbbreviation)
+    fixAgencyComponents(report, agencyAbbreviation)
 
     // Fix the DocumentFiscalYearDate.
-    fixDocumentFiscalYearDate(json)
+    fixDocumentFiscalYearDate(report)
 
     // Fix any elements missing content.
-    addMissingContent(json)
+    addMissingContent(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -58,8 +60,8 @@ for (const file of files) {
     fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
 }
 
-function fixAgency(json) {
-    const existingAbbreviation = json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationAbbreviationText']['$t']
+function fixAgency(report) {
+    const existingAbbreviation = report['nc:Organization']['nc:OrganizationAbbreviationText']['$t']
     // Do we need to fix anything?
     const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
     if (agencyAbbreviationExists(trimmedAbbreviation)) {
@@ -72,20 +74,20 @@ function fixAgency(json) {
     }
     const fixedAbbreviation = agencyFixes[trimmedAbbreviation]
     DEBUG && console.log('AGENCY: Changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
-    json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
+    report['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
     return fixedAbbreviation
 }
 
-function fixAgencyComponents(json, agencyAbbreviation) {
-    if (!('nc:OrganizationSubUnit' in json['iepd:FoiaAnnualReport']['nc:Organization'])) {
+function fixAgencyComponents(report, agencyAbbreviation) {
+    if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
         // This agency has no components, so we are done.
         return
     }
     // Make sure it is an array.
-    if (!Array.isArray(json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit'])) {
-        json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit'] = [json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit']]
+    if (!Array.isArray(report['nc:Organization']['nc:OrganizationSubUnit'])) {
+        report['nc:Organization']['nc:OrganizationSubUnit'] = [report['nc:Organization']['nc:OrganizationSubUnit']]
     }
-    for (const agencyComponent of json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit']) {
+    for (const agencyComponent of report['nc:Organization']['nc:OrganizationSubUnit']) {
         const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
         // Do we need to fix anything?
         const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
@@ -106,17 +108,17 @@ function fixAgencyComponents(json, agencyAbbreviation) {
     }
 }
 
-function fixDocumentFiscalYearDate(json) {
-    if ('foia:DocumentFiscalYear' in json['iepd:FoiaAnnualReport']) {
-        json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYearDate'] = json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYear']
-        delete json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYear']
+function fixDocumentFiscalYearDate(report) {
+    if ('foia:DocumentFiscalYear' in report) {
+        report['foia:DocumentFiscalYearDate'] = report['foia:DocumentFiscalYear']
+        delete report['foia:DocumentFiscalYear']
         DEBUG && console.log('XML: changed DocumentFiscalYear to DocumentFiscalYearDate')
     }
 }
 
-function addMissingContent(json) {
-    DEBUG && console.log(json)
-    if ('OldestPendingAppealSection' in json['iepd:FoiaAnnualReport']) {
+function addMissingContent(report) {
+    //DEBUG && console.log(report)
+    if ('OldestPendingAppealSection' in report) {
 
     }
 
