@@ -329,7 +329,7 @@ function addComplexResponseTimeIncrementsSection(report) {
                     'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
                 },
             ],
-            'TimeIncrementTotalQuantity': { '$t': 0 }
+            'foia:TimeIncrementTotalQuantity': { '$t': 0 }
         }
         report[section][orgAssociation] = getOrgAssociation(sectionId)
     }

@@ -568,9 +568,9 @@
                     0
                 </foia:TimeIncrementProcessedQuantity>
             </foia:TimeIncrement>
-            <TimeIncrementTotalQuantity>
+            <foia:TimeIncrementTotalQuantity>
                 0
-            </TimeIncrementTotalQuantity>
+            </foia:TimeIncrementTotalQuantity>
         </foia:ComponentResponseTimeIncrements>
         <foia:ResponseTimeIncrementsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="CRT1">
