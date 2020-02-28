@@ -88,7 +88,7 @@ for (const file of files) {
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
-    const xml = parser.toXml(stringified).replace(/\r?\n|\r/g, ' ')
+    const xml = parser.toXml(stringified, { sanitize: true }).replace(/\r?\n|\r/g, ' ')
 
     // Format it nicely and write to disk.
     fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xml)

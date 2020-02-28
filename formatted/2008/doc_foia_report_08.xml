@@ -153,7 +153,7 @@
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Irons & Sears v Dann, 606 F.2d 1215, 1220 (D.C. Cir.1979)
+                    Irons &amp; Sears v Dann, 606 F.2d 1215, 1220 (D.C. Cir.1979)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
@@ -211,7 +211,7 @@
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES21">
             <j:StatuteDescriptionText>
-                41 U.S.C. § 253 &423
+                41 U.S.C. § 253 &amp;423
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Proposal not set forth or incorporated by reference in a contract

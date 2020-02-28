@@ -9204,7 +9204,7 @@
             Not all components process administrative appeals.  OSD/JS FOIA Appeals Branch processes the following components' appeals: CENTCOM, DoDEA, DTIC, EUCOM, JFCOM, NORTHCOM, OSD/JS, PACOM, SOCOM, SOUTHCOM, STARTCOM, TRANSCOM, and TRICARE.
         </foia:FootnoteText>
         <foia:FootnoteText>
-            AF & NSA had database problems and were not able to capture this informaton.
+            AF &amp; NSA had database problems and were not able to capture this informaton.
         </foia:FootnoteText>
     </foia:AppealDenialOtherReasonSection>
     <foia:AppealResponseTimeSection>
@@ -12195,7 +12195,7 @@
             AF database error, unable to retreive information.
         </foia:FootnoteText>
         <foia:FootnoteText>
-            DLA & PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
+            DLA &amp; PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
         </foia:FootnoteText>
     </foia:ProcessedResponseTimeSection>
     <foia:InformationGrantedResponseTimeSection>
@@ -13738,7 +13738,7 @@
             AF database error, unable to retreive information.
         </foia:FootnoteText>
         <foia:FootnoteText>
-            DLA & PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
+            DLA &amp; PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
         </foia:FootnoteText>
     </foia:InformationGrantedResponseTimeSection>
     <foia:SimpleResponseTimeIncrementsSection>
@@ -25697,7 +25697,7 @@
             Due to the decentralized processing and tracking of FOIA requests within DoD and because the DoD does not have the means to centrally capture all the required data, it is not possible to calculate DoD medians.
         </foia:FootnoteText>
         <foia:FootnoteText>
-            DLA & PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
+            DLA &amp; PACOM have multiple feeder organizations which did not capture necessary information to compute medians.
         </foia:FootnoteText>
     </foia:PendingPerfectedRequestsSection>
     <foia:OldestPendingRequestSection>

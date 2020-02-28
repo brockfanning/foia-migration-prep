@@ -30,7 +30,7 @@
                 CRCL
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of Civil Rights & Civil Liberties
+                Office of Civil Rights &amp; Civil Liberties
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG3">
@@ -51,7 +51,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG5">
             <nc:OrganizationAbbreviationText>
-                I&A
+                I&amp;A
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of Intelligence and Analysis
@@ -123,7 +123,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG14">
             <nc:OrganizationAbbreviationText>
-                S&T
+                S&amp;T
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Science and Technology Directorate
@@ -1183,7 +1183,7 @@
             PRIV - Number of Request Pending as of Start of Fiscal Year, Corrected amount from component reporting error in FY’07
         </foia:FootnoteText>
         <foia:FootnoteText>
-            S&T - Number of Request Pending as of Start of Fiscal Year, Corrected amount from component reporting error in FY’07
+            S&amp;T - Number of Request Pending as of Start of Fiscal Year, Corrected amount from component reporting error in FY’07
         </foia:FootnoteText>
         <foia:FootnoteText>
             TSA - Number of Request Pending as of Start of Fiscal Year, Corrected amount from component reporting error in FY’07

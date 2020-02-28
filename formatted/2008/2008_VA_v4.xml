@@ -22,7 +22,7 @@
                 OAL
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Acquisition & Material Management
+                Acquisition &amp; Material Management
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG2">
@@ -43,10 +43,10 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG4">
             <nc:OrganizationAbbreviationText>
-                C&LA
+                C&amp;LA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of Congressional & Legislative Affairs
+                Office of Congressional &amp; Legislative Affairs
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG5">
@@ -54,7 +54,7 @@
                 CFM
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of Construction & Facilities Management
+                Office of Construction &amp; Facilities Management
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG6">
@@ -62,7 +62,7 @@
                 ODI
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of Diversity Management & Equal Employment Opportunity
+                Office of Diversity Management &amp; Equal Employment Opportunity
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG7">
@@ -102,15 +102,15 @@
                 OASHRA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of the Assistant Secretary for Human Resources & Administration
+                Office of the Assistant Secretary for Human Resources &amp; Administration
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG12">
             <nc:OrganizationAbbreviationText>
-                OASP&IA
+                OASP&amp;IA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of the Assistant Secretary for Public & Intergovernmental Affairs
+                Office of the Assistant Secretary for Public &amp; Intergovernmental Affairs
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG13">
@@ -166,12 +166,12 @@
                 OSDBU
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Office of Small & Disadvantaged Business Utilization
+                Office of Small &amp; Disadvantaged Business Utilization
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG20">
             <nc:OrganizationAbbreviationText>
-                P&P
+                P&amp;P
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Policy and Planning
@@ -190,7 +190,7 @@
                 OSP
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Security & Law Enforcement
+                Security &amp; Law Enforcement
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG23">

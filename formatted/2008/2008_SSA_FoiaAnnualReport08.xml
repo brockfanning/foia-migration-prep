@@ -154,7 +154,7 @@
         <foia:ComponentOtherDenialReason s:id="CODR8">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    Description of "Other" Reasons for Denials from Chart B(1) & Number of times those Reasons were relied upon.
+                    Description of "Other" Reasons for Denials from Chart B(1) &amp; Number of times those Reasons were relied upon.
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     0
@@ -388,7 +388,7 @@
         <foia:ComponentOtherDenialReason s:id="ADOR8">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    Description of "Other" Reasons for Denial on Appeal from Chart C (2) & Number of Times Those Reasons Were Relied Upon
+                    Description of "Other" Reasons for Denial on Appeal from Chart C (2) &amp; Number of Times Those Reasons Were Relied Upon
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     0

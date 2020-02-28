@@ -30,7 +30,7 @@
                 Authority
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Authority Member, Administrative Law Judges & Solicitor
+                Authority Member, Administrative Law Judges &amp; Solicitor
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG3">

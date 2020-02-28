@@ -46,7 +46,7 @@
                 FWS
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Fish & Wildlife Service
+                Fish &amp; Wildlife Service
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG5">

@@ -38,7 +38,7 @@
                 CMS
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
-                Centers for Medicare & Medicaid Services
+                Centers for Medicare &amp; Medicaid Services
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG4">
