@@ -234,6 +234,25 @@
         </foia:AppealNonExemptionDenialOrganizationAssociation>
     </foia:AppealNonExemptionDenialSection>
     <foia:AppealDenialOtherReasonSection>
+        <foia:ComponentOtherDenialReason s:id="ADOR8">
+            <foia:OtherDenialReason>
+                <foia:OtherDenialReasonDescriptionText>
+                    0
+                </foia:OtherDenialReasonDescriptionText>
+                <foia:OtherDenialReasonQuantity>
+                    0
+                </foia:OtherDenialReasonQuantity>
+            </foia:OtherDenialReason>
+            <foia:ComponentOtherDenialReasonQuantity>
+                0
+            </foia:ComponentOtherDenialReasonQuantity>
+        </foia:ComponentOtherDenialReason>
+        <foia:OtherDenialReasonOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ADOR8">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:OtherDenialReasonOrganizationAssociation>
     </foia:AppealDenialOtherReasonSection>
     <foia:AppealResponseTimeSection>
         <foia:ResponseTime s:id="ART0">

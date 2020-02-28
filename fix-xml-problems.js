@@ -54,6 +54,7 @@ for (const file of files) {
     addExemption3StatuteSection(report)
     addRequestDenialOtherReasonSection(report)
     addComponentAppliedExemptions(report)
+    addAppealDenialOtherReasonSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -190,6 +191,23 @@ function addComponentAppliedExemptions(report) {
             if (!('foia:AppliedExemption' in report[section]['foia:ComponentAppliedExemptions'])) {
                 report[section]['foia:ComponentAppliedExemptions']['$t'] = 'N/A'
             }
+        }
+    }
+}
+
+function addAppealDenialOtherReasonSection(report) {
+    if (!('foia:ComponentOtherDenialReason' in report['foia:AppealDenialOtherReasonSection'])) {
+        report['foia:AppealDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
+            's:id': 'ADOR8',
+            'foia:OtherDenialReason': {
+                'foia:OtherDenialReasonDescriptionText': { '$t': '0' },
+                'foia:OtherDenialReasonQuantity': { '$t': '0' }
+            },
+            'foia:ComponentOtherDenialReasonQuantity': { '$t': '0' }
+        }
+        report['foia:AppealDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
+            'foia:ComponentDataReference': { 's:ref': 'ADOR8' },
+            'nc:OrganizationReference': { 's:ref': 'ORG0' }
         }
     }
 }
