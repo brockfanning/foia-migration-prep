@@ -135,20 +135,19 @@ function addOldItemSections(report) {
         'foia:OldestPendingRequestSection': 'OPR10',
         'foia:OldestPendingConsultationSection': 'OPC10',
     }
+    const subsection = 'foia:OldestPendingItems'
+    const item = 'foia:OldItem'
     for (const [section, sectionId] of Object.entries(sections)) {
         if (section in report) {
-            if (!('foia:OldestPendingItems' in report[section])) {
-                report[section]['foia:OldestPendingItems'] = { 's:id': sectionId }
-                report[section]['OldestPendingItemsOrganizationAssociation'] = {
-                    'foia:ComponentDataReference': { 's:ref': sectionId },
-                    'nc:OrganizationReference': { 's:ref': 'ORG0' },
-                }
+            if (!(subsection in report[section])) {
+                report[section][subsection] = { 's:id': sectionId }
+                report[section]['OldestPendingItemsOrganizationAssociation'] = orgAssociation(sectionId)
             }
-            else if (Array.isArray(report[section]['foia:OldestPendingItems'])) {
+            else if (Array.isArray(report[section][subsection])) {
                 continue
             }
-            if (!('foia:OldItem' in report[section]['foia:OldestPendingItems'])) {
-                report[section]['foia:OldestPendingItems']['foia:OldItem'] = [
+            if (!(item in report[section][subsection])) {
+                report[section][subsection][item] = [
                     {
                         'foia:OldItemReceiptDate': { '$t': 'N/A' },
                         'foia:OldItemPendingDaysQuantity': { '$t': 0 }
@@ -193,36 +192,54 @@ function addRequestDenialOtherReasonSection(report) {
 }
 
 function addComponentAppliedExemptions(report) {
-    const sections = [
-        'foia:AppealDispositionAppliedExemptionsSection'
-    ]
-    for (const section of sections) {
-        if (section in report && 'foia:ComponentAppliedExemptions' in report[section]) {
-            if (!('foia:AppliedExemption' in report[section]['foia:ComponentAppliedExemptions'])) {
-                report[section]['foia:ComponentAppliedExemptions']['$t'] = 'N/A'
+    const sections = {
+        'foia:AppealDispositionAppliedExemptionsSection': 'ADE1',
+        'RequestDispositionAppliedExemptionsSection': 'RDE1'
+    }
+    const subsection = 'foia:ComponentAppliedExemptions'
+    const item = 'foia:AppliedExemption'
+    for (const [section, sectionId] of Object.entries(sections)) {
+        if (section in report) {
+            if (!(subsection in report[section])) {
+                report[section][subsection] = { 's:id': sectionId }
+                report[section]['ComponentAppliedExemptionsOrganizationAssociation'] = orgAssociation(sectionId)
+            }
+            else if (Array.isArray(report[section][subsection])) {
+                continue
+            }
+            if (!(item in report[section][subsection])) {
+                report[section][subsection]['$t'] = 'N/A'
             }
         }
     }
 }
 
 function addAppealDenialOtherReasonSection(report) {
-    if (!('foia:ComponentOtherDenialReason' in report['foia:AppealDenialOtherReasonSection'])) {
-        report['foia:AppealDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
-            's:id': 'ADOR8',
+    section = 'foia:AppealDenialOtherReasonSection'
+    sectionId = 'ADOR8'
+    subsection = 'foia:ComponentOtherDenialReason'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
             'foia:OtherDenialReason': {
                 'foia:OtherDenialReasonDescriptionText': { '$t': 0 },
                 'foia:OtherDenialReasonQuantity': { '$t': 0 }
             },
             'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
-        report['foia:AppealDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
-            'foia:ComponentDataReference': { 's:ref': 'ADOR8' },
-            'nc:OrganizationReference': { 's:ref': 'ORG0' }
-        }
+        report[section]['foia:OtherDenialReasonOrganizationAssociation'] = orgAssociation(sectionId)
     }
 }
 
 // ****************** HELPER FUNCTIONS **************************
+
+// Get a blank object for organization association in the XML.
+function orgAssociation(sectionId) {
+    return {
+        'foia:ComponentDataReference': { 's:ref': sectionId },
+        'nc:OrganizationReference': { 's:ref': 'ORG0' }
+    }
+}
 
 // Look up in the list of agencies whether an abbreviation is there.
 function agencyAbbreviationExists(abbreviation) {

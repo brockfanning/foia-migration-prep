@@ -130,6 +130,15 @@
     <foia:AppealDispositionSection>
     </foia:AppealDispositionSection>
     <foia:AppealDispositionAppliedExemptionsSection>
+        <foia:ComponentAppliedExemptions s:id="ADE1">
+            N/A
+        </foia:ComponentAppliedExemptions>
+        <ComponentAppliedExemptionsOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ADE1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </ComponentAppliedExemptionsOrganizationAssociation>
     </foia:AppealDispositionAppliedExemptionsSection>
     <foia:AppealNonExemptionDenialSection>
     </foia:AppealNonExemptionDenialSection>
