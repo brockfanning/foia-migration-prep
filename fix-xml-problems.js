@@ -61,7 +61,8 @@ for (const file of files) {
     const xml = parser.toXml(stringified)
 
     // Format it nicely and write to disk.
-    fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
+    fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xml)
+    //fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
 }
 
 function fixAgency(report) {
@@ -141,7 +142,7 @@ function addOldItemSections(report) {
                 report[section]['foia:OldestPendingItems']['foia:OldItem'] = [
                     {
                         'foia:OldItemReceiptDate': { '$t': 'N/A' },
-                        'foia:OldItemPendingDaysQuantity': { '$t': '0' }
+                        'foia:OldItemPendingDaysQuantity': { '$t': 0 }
                     }
                 ]
             }
@@ -153,14 +154,14 @@ function addExemption3StatuteSection(report) {
     if (!('foia:ReliedUponStatute' in report['foia:Exemption3StatuteSection'])) {
         report['foia:Exemption3StatuteSection']['foia:ReliedUponStatute'] = {
             's:id': 'ES8',
-            'j:StatuteDescriptionText': { '$t': '0' },
-            'foia:ReliedUponStatuteInformationWithheldText': { '$t': '0' },
+            'j:StatuteDescriptionText': { '$t': 0 },
+            'foia:ReliedUponStatuteInformationWithheldText': { '$t': 0 },
             'nc:Case': { 'nc:CaseTitleText': { '$t': 'N/A' } }
         }
         report['foia:Exemption3StatuteSection']['foia:ReliedUponStatuteOrganizationAssociation'] = {
             'foia:ComponentDataReference': { 's:ref': 'ES8' },
             'nc:OrganizationReference': { 's:ref': 'ORG0' },
-            'foia:ReliedUponStatuteQuantity': { '$t': '0' }
+            'foia:ReliedUponStatuteQuantity': { '$t': 0 }
         }
     }
 }
@@ -170,10 +171,10 @@ function addRequestDenialOtherReasonSection(report) {
         report['foia:RequestDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
             's:id': 'CODR8',
             'foia:OtherDenialReason': {
-                'foia:OtherDenialReasonDescriptionText': { '$t': '0' },
-                'foia:OtherDenialReasonQuantity': { '$t': '0' }
+                'foia:OtherDenialReasonDescriptionText': { '$t': 0 },
+                'foia:OtherDenialReasonQuantity': { '$t': 0 }
             },
-            'foia:ComponentOtherDenialReasonQuantity': { '$t': '0' }
+            'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
         report['foia:RequestDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
             'foia:ComponentDataReference': { 's:ref': 'CODR8' },
@@ -200,10 +201,10 @@ function addAppealDenialOtherReasonSection(report) {
         report['foia:AppealDenialOtherReasonSection']['foia:ComponentOtherDenialReason'] = {
             's:id': 'ADOR8',
             'foia:OtherDenialReason': {
-                'foia:OtherDenialReasonDescriptionText': { '$t': '0' },
-                'foia:OtherDenialReasonQuantity': { '$t': '0' }
+                'foia:OtherDenialReasonDescriptionText': { '$t': 0 },
+                'foia:OtherDenialReasonQuantity': { '$t': 0 }
             },
-            'foia:ComponentOtherDenialReasonQuantity': { '$t': '0' }
+            'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
         report['foia:AppealDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
             'foia:ComponentDataReference': { 's:ref': 'ADOR8' },
