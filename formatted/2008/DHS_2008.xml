@@ -18172,8 +18172,7 @@
             </nc:OrganizationReference>
         </foia:ExpeditedProcessingOrganizationAssociation>
         <foia:FootnoteText>
-            The Agency overall median and average numbers do not include USSS response times.  
-At this time USSS is unable to extract the raw data from its tracking system needed to produce the Agency overall median.  USSS will update its tracking system to meet this requirement for FY09.
+            The Agency overall median and average numbers do not include USSS response times.   At this time USSS is unable to extract the raw data from its tracking system needed to produce the Agency overall median.  USSS will update its tracking system to meet this requirement for FY09.
         </foia:FootnoteText>
     </foia:ExpeditedProcessingSection>
     <foia:FeeWaiverSection>

@@ -21,9 +21,7 @@
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
-                16 U.S.C. § 470aa, et seq.
-(1994) [Specifically
-16 U.S.C. § 470hh(a)]
+                16 U.S.C. § 470aa, et seq. (1994) [Specifically 16 U.S.C. § 470hh(a)]
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Archaeological survey data
@@ -1172,8 +1170,7 @@
             </nc:OrganizationReference>
         </foia:BacklogComparisonOrganizationAssociation>
         <foia:FootnoteText>
-            Number of Backlogged Requests as of End of the Fiscal Year from Previous Annual Report - Data not required to be
-reported until FY2009.
+            Number of Backlogged Requests as of End of the Fiscal Year from Previous Annual Report - Data not required to be reported until FY2009.
         </foia:FootnoteText>
     </foia:BackloggedRequestComparisonSection>
     <foia:ProcessedAppealComparisonSection>

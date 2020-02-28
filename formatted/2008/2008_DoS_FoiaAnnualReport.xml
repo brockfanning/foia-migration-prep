@@ -96,10 +96,7 @@
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Council for a Livable World Education Fund v. DOS
-Docket #96-1807
-(D.D.C.
- Nov. 23, 1998)
+                    Council for a Livable World Education Fund v. DOS Docket #96-1807 (D.D.C.  Nov. 23, 1998)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
@@ -112,16 +109,13 @@ Docket #96-1807
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Hornbostel v. DOI
-305 F. Supp. 2d 21
-(D.D.C. 2003)
+                    Hornbostel v. DOI 305 F. Supp. 2d 21 (D.D.C. 2003)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES20">
             <j:StatuteDescriptionText>
-                42 U.S.C.
- § 2011
+                42 U.S.C.  § 2011
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Protects records defining policy for development, use and control of atomic and nuclear energy in private, peaceful and military matters
@@ -141,34 +135,26 @@ Docket #96-1807
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Church of Scientology v. NSA
-610 F.2d 824
-(D.C. Cir. 1979)
+                    Church of Scientology v. NSA 610 F.2d 824 (D.C. Cir. 1979)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES24">
             <j:StatuteDescriptionText>
-                50 U.S.C.
- § 403
+                50 U.S.C.  § 403
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 CIA sources and methods; functions and personnel
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Minier v. CIA 
-88 F.3d 796
-(9th Cir. 1996)
-CIA v. Sims
-471 U.S. 159 (1985)
+                    Minier v. CIA  88 F.3d 796 (9th Cir. 1996) CIA v. Sims 471 U.S. 159 (1985)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES26">
             <j:StatuteDescriptionText>
-                50 U.S.C.
- § 1701
+                50 U.S.C.  § 1701
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Records on arbitration claims before the Iran-U.S. Claims Tribunal
@@ -181,18 +167,14 @@ CIA v. Sims
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES28">
             <j:StatuteDescriptionText>
-                50 U.S.C.
- § 2411(c)
+                50 U.S.C.  § 2411(c)
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Information concerning export license applications
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Export Information Twin Coast Newspapers, Inc. v. Dep’t. of Commerce
-No. 98-0978
-(D.D.C. 
-Nov. 6, 1979)
+                    Export Information Twin Coast Newspapers, Inc. v. Dep’t. of Commerce No. 98-0978 (D.D.C.  Nov. 6, 1979)
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
@@ -763,9 +745,7 @@ Nov. 6, 1979)
             </nc:OrganizationReference>
         </foia:OtherDenialReasonOrganizationAssociation>
         <foia:FootnoteText>
-            *requester failed to provide proper personal verification and did not respond to the Department’s efforts to contact him.  The request was canceled.  (This category is no longer being used.)
-**multiple deficiencies.
-***undecided is used when a request is first entered into the database and is later changed to the proper category by a case manager.     As of 9/30/2008, the reason for closure for one case was “undecided.”  After 10/01/08, the reason was determined to be “improper request.”
+            *requester failed to provide proper personal verification and did not respond to the Department’s efforts to contact him.  The request was canceled.  (This category is no longer being used.) **multiple deficiencies. ***undecided is used when a request is first entered into the database and is later changed to the proper category by a case manager.     As of 9/30/2008, the reason for closure for one case was “undecided.”  After 10/01/08, the reason was determined to be “improper request.”
         </foia:FootnoteText>
     </foia:RequestDenialOtherReasonSection>
     <foia:RequestDispositionAppliedExemptionsSection>
@@ -3584,8 +3564,7 @@ Nov. 6, 1979)
             </nc:OrganizationReference>
         </foia:FeeWaiverOrganizationAssociation>
         <foia:FootnoteText>
-            *Data collected since 7/1/2008
-**OIG Reported no Fee Waiver Requests
+            *Data collected since 7/1/2008 **OIG Reported no Fee Waiver Requests
         </foia:FootnoteText>
     </foia:FeeWaiverSection>
     <foia:PersonnelAndCostSection>

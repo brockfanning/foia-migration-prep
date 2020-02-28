@@ -2005,10 +2005,7 @@
         <foia:ComponentOtherDenialReason s:id="CODR8">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    Returned to other agency:  0
-Litigation:  2
-Referred requester to Web:  3
-No Response/Returned mail from Still Interested letters:  75
+                    Returned to other agency:  0 Litigation:  2 Referred requester to Web:  3 No Response/Returned mail from Still Interested letters:  75
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     80
@@ -2021,9 +2018,7 @@ No Response/Returned mail from Still Interested letters:  75
         <foia:ComponentOtherDenialReason s:id="CODR10">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    Available next month:  1
-Available on website:  1
-Need Social Security number:  3
+                    Available next month:  1 Available on website:  1 Need Social Security number:  3
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     5

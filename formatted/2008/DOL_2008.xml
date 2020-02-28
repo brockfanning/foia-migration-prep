@@ -204,8 +204,7 @@
             </foia:ReliedUponStatuteInformationWithheldText>
             <nc:Case>
                 <nc:CaseTitleText>
-                    Component A:
-(EBSA National Office )
+                    Component A: (EBSA National Office )
                 </nc:CaseTitleText>
             </nc:Case>
         </foia:ReliedUponStatute>
@@ -224,8 +223,7 @@
         </foia:ReliedUponStatute>
         <foia:ReliedUponStatute s:id="ES12">
             <j:StatuteDescriptionText>
-                Confidential Information Statistical Efficiency Act 
-(CIPSEA), Title V of Public Law 107-347
+                Confidential Information Statistical Efficiency Act  (CIPSEA), Title V of Public Law 107-347
             </j:StatuteDescriptionText>
             <foia:ReliedUponStatuteInformationWithheldText>
                 Confidential respondent data to BLS surveys
