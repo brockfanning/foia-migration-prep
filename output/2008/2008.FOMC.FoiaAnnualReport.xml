@@ -201,6 +201,14 @@
     </foia:AppealResponseTimeSection>
     <foia:OldestPendingAppealSection>
         <foia:OldestPendingItems s:id="OPA10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>
+                    N/A
+                </foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>
+                    0
+                </foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
         </foia:OldestPendingItems>
         <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPA10">
@@ -709,6 +717,14 @@
     </foia:PendingPerfectedRequestsSection>
     <foia:OldestPendingRequestSection>
         <foia:OldestPendingItems s:id="OPR10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>
+                    N/A
+                </foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>
+                    0
+                </foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
         </foia:OldestPendingItems>
         <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPR10">
@@ -848,6 +864,14 @@
     </foia:ProcessedConsultationSection>
     <foia:OldestPendingConsultationSection>
         <foia:OldestPendingItems s:id="OPC10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>
+                    N/A
+                </foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>
+                    0
+                </foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
         </foia:OldestPendingItems>
         <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPC10">

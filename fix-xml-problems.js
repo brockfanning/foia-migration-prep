@@ -3,7 +3,7 @@ const fs = require('fs')
 const parser = require('xml2json')
 const xmlFormatter = require('xml-formatter');
 
-const DEBUG = true
+const DEBUG = false
 
 const args = process.argv.slice(2)
 if (args.length < 1) {
@@ -50,7 +50,7 @@ for (const file of files) {
     fixDocumentFiscalYearDate(report)
 
     // Fix any elements missing content.
-    addMissingContent(report)
+    addOldItemSections(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -83,29 +83,35 @@ function fixAgencyComponents(report, agencyAbbreviation) {
         // This agency has no components, so we are done.
         return
     }
-    // Make sure it is an array.
+    // Sometimes it is not an array.
     if (!Array.isArray(report['nc:Organization']['nc:OrganizationSubUnit'])) {
-        report['nc:Organization']['nc:OrganizationSubUnit'] = [report['nc:Organization']['nc:OrganizationSubUnit']]
+        fixAgencyComponent(report['nc:Organization']['nc:OrganizationSubUnit'], agencyAbbreviation)
     }
-    for (const agencyComponent of report['nc:Organization']['nc:OrganizationSubUnit']) {
-        const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
-        // Do we need to fix anything?
-        const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
-        if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
-            // There is already one in Drupal, so we are done.
-            if (trimmedAbbreviation != existingAbbreviation) {
-                DEBUG && console.log('COMPONENT: Automatically changed ' + existingAbbreviation + ' to ' + trimmedAbbreviation)
-            }
-            continue
+    else {
+        for (const agencyComponent of report['nc:Organization']['nc:OrganizationSubUnit']) {
+            fixAgencyComponent(agencyComponent, agencyAbbreviation)
         }
-        // Attempt to fix it.
-        if (!(agencyAbbreviation in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agencyAbbreviation])) {
-            throw 'Agency not found: ' + trimmedAbbreviation
-        }
-        const fixedAbbreviation = agencyComponentFixes[agencyAbbreviation][trimmedAbbreviation]
-        DEBUG && console.log('COMPONENT: Pre-configured map changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
-        agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
     }
+}
+
+function fixAgencyComponent(agencyComponent, agencyAbbreviation) {
+    const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
+    // Do we need to fix anything?
+    const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
+    if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
+        // There is already one in Drupal, so we are done.
+        if (trimmedAbbreviation != existingAbbreviation) {
+            DEBUG && console.log('COMPONENT: Automatically changed ' + existingAbbreviation + ' to ' + trimmedAbbreviation)
+        }
+        return
+    }
+    // Attempt to fix it.
+    if (!(agencyAbbreviation in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agencyAbbreviation])) {
+        throw 'Agency not found: ' + trimmedAbbreviation + ' in ' + agencyAbbreviation
+    }
+    const fixedAbbreviation = agencyComponentFixes[agencyAbbreviation][trimmedAbbreviation]
+    DEBUG && console.log('COMPONENT: Pre-configured map changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
+    agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
 }
 
 function fixDocumentFiscalYearDate(report) {
@@ -116,13 +122,27 @@ function fixDocumentFiscalYearDate(report) {
     }
 }
 
-function addMissingContent(report) {
-    //DEBUG && console.log(report)
-    if ('OldestPendingAppealSection' in report) {
-
+function addOldItemSections(report) {
+    const oldItemSections = [
+        'foia:OldestPendingAppealSection',
+        'foia:OldestPendingRequestSection',
+        'foia:OldestPendingConsultationSection'
+    ]
+    for (const oldItemSection of oldItemSections) {
+        if (oldItemSection in report && 'foia:OldestPendingItems' in report[oldItemSection]) {
+            if (Array.isArray(report[oldItemSection]['foia:OldestPendingItems'])) {
+                continue
+            }
+            if (!('foia:OldItem' in report[oldItemSection]['foia:OldestPendingItems'])) {
+                report[oldItemSection]['foia:OldestPendingItems']['foia:OldItem'] = [
+                    {
+                        'foia:OldItemReceiptDate': { '$t': 'N/A' },
+                        'foia:OldItemPendingDaysQuantity': { '$t': '0' }
+                    }
+                ]
+            }
+        }
     }
-
-
 }
 
 // ****************** HELPER FUNCTIONS **************************

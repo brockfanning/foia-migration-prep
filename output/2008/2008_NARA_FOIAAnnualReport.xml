@@ -1424,6 +1424,14 @@
     </foia:ProcessedConsultationSection>
     <foia:OldestPendingConsultationSection>
         <foia:OldestPendingItems s:id="OPC10">
+            <foia:OldItem>
+                <foia:OldItemReceiptDate>
+                    N/A
+                </foia:OldItemReceiptDate>
+                <foia:OldItemPendingDaysQuantity>
+                    0
+                </foia:OldItemPendingDaysQuantity>
+            </foia:OldItem>
         </foia:OldestPendingItems>
         <foia:OldestPendingItemsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="OPC10">
