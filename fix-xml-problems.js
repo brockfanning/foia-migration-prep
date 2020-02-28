@@ -61,6 +61,9 @@ for (const file of files) {
     addAppealNonExemptionDenialSection(report)
     addComplexResponseTimeIncrementsSection(report)
     addAppealResponseTimeSection(report)
+    addProcessedResponseTimeSection(report)
+    addInformationGrantedResponseTimeSection(report)
+    addSimpleResponseTimeIncrementsSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -348,6 +351,136 @@ function addAppealResponseTimeSection(report) {
             'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
             'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
             'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addProcessedResponseTimeSection(report) {
+    const section = 'foia:ProcessedResponseTimeSection'
+    const sectionId = 'PRT0'
+    const subsection = 'foia:ProcessedResponseTime'
+    const orgAssociation = 'foia:ProcessedResponseTimeOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:SimpleResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+            'foia:ComplexResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+            'foia:ExpeditedResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addInformationGrantedResponseTimeSection(report) {
+    const section = 'foia:InformationGrantedResponseTimeSection'
+    const sectionId = 'IGR0'
+    const subsection = 'foia:ProcessedResponseTime'
+    const orgAssociation = 'foia:ProcessedResponseTimeOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:SimpleResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+            'foia:ComplexResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+            'foia:ExpeditedResponseTime': {
+                'foia:ResponseTimeMedianDaysValue': { '$t': 0 },
+                'foia:ResponseTimeAverageDaysValue': { '$t': 0 },
+                'foia:ResponseTimeLowestDaysValue': { '$t': 0 },
+                'foia:ResponseTimeHighestDaysValue': { '$t': 0 },
+            },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addSimpleResponseTimeIncrementsSection(report) {
+    const section = 'foia:SimpleResponseTimeIncrementsSection'
+    const sectionId = 'SRT1'
+    const subsection = 'foia:ComponentResponseTimeIncrements'
+    const orgAssociation = 'foia:ResponseTimeIncrementsOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:TimeIncrement': [
+                {
+                    'foia:TimeIncrementCode': { '$t': '1-20' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '21-40' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '41-60' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '61-80' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '81-100' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '101-120' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '121-140' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '141-160' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '161-180' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '181-200' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '201-300' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '301-400' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+                {
+                    'foia:TimeIncrementCode': { '$t': '400+' },
+                    'foia:TimeIncrementProcessedQuantity': { '$t': 0 }
+                },
+            ],
+            'foia:TimeIncrementTotalQuantity': { '$t': 0 }
         }
         report[section][orgAssociation] = getOrgAssociation(sectionId)
     }
