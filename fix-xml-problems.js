@@ -65,20 +65,27 @@ function fixAgencyComponents(json, agencyAbbreviation) {
         // This agency has no components, so we are done.
         return
     }
+    // Make sure it is an array.
+    if (!Array.isArray(json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit'])) {
+        json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit'] = [json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit']]
+    }
     for (const agencyComponent of json['iepd:FoiaAnnualReport']['nc:Organization']['nc:OrganizationSubUnit']) {
         const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
         // Do we need to fix anything?
         const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
         if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
             // There is already one in Drupal, so we are done.
-            return
+            if (trimmedAbbreviation != existingAbbreviation) {
+                DEBUG && console.log('COMPONENT: Automatically changed ' + existingAbbreviation + ' to ' + trimmedAbbreviation)
+            }
+            continue
         }
         // Attempt to fix it.
         if (!(agencyAbbreviation in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agencyAbbreviation])) {
             throw 'Agency not found: ' + trimmedAbbreviation
         }
         const fixedAbbreviation = agencyComponentFixes[agencyAbbreviation][trimmedAbbreviation]
-        DEBUG && console.log('COMPONENT: Changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
+        DEBUG && console.log('COMPONENT: Pre-configured map changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
         agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
     }
 }
