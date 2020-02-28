@@ -185,6 +185,7 @@
     </foia:AppealDispositionSection>
     <foia:AppealDispositionAppliedExemptionsSection>
         <foia:ComponentAppliedExemptions s:id="ADE1">
+            N/A
         </foia:ComponentAppliedExemptions>
         <foia:ComponentAppliedExemptionsOrganizationAssociation>
             <foia:ComponentDataReference s:ref="ADE1">

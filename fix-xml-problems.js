@@ -53,6 +53,7 @@ for (const file of files) {
     addOldItemSections(report)
     addExemption3StatuteSection(report)
     addRequestDenialOtherReasonSection(report)
+    addComponentAppliedExemptions(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -125,18 +126,18 @@ function fixDocumentFiscalYearDate(report) {
 }
 
 function addOldItemSections(report) {
-    const oldItemSections = [
+    const sections = [
         'foia:OldestPendingAppealSection',
         'foia:OldestPendingRequestSection',
         'foia:OldestPendingConsultationSection'
     ]
-    for (const oldItemSection of oldItemSections) {
-        if (oldItemSection in report && 'foia:OldestPendingItems' in report[oldItemSection]) {
-            if (Array.isArray(report[oldItemSection]['foia:OldestPendingItems'])) {
+    for (const section of sections) {
+        if (section in report && 'foia:OldestPendingItems' in report[section]) {
+            if (Array.isArray(report[section]['foia:OldestPendingItems'])) {
                 continue
             }
-            if (!('foia:OldItem' in report[oldItemSection]['foia:OldestPendingItems'])) {
-                report[oldItemSection]['foia:OldestPendingItems']['foia:OldItem'] = [
+            if (!('foia:OldItem' in report[section]['foia:OldestPendingItems'])) {
+                report[section]['foia:OldestPendingItems']['foia:OldItem'] = [
                     {
                         'foia:OldItemReceiptDate': { '$t': 'N/A' },
                         'foia:OldItemPendingDaysQuantity': { '$t': '0' }
@@ -176,6 +177,19 @@ function addRequestDenialOtherReasonSection(report) {
         report['foia:RequestDenialOtherReasonSection']['foia:OtherDenialReasonOrganizationAssociation'] = {
             'foia:ComponentDataReference': { 's:ref': 'CODR8' },
             'nc:OrganizationReference': { 's:ref': 'ORG0' }
+        }
+    }
+}
+
+function addComponentAppliedExemptions(report) {
+    const sections = [
+        'foia:AppealDispositionAppliedExemptionsSection'
+    ]
+    for (const section of sections) {
+        if (section in report && 'foia:ComponentAppliedExemptions' in report[section]) {
+            if (!('foia:AppliedExemption' in report[section]['foia:ComponentAppliedExemptions'])) {
+                report[section]['foia:ComponentAppliedExemptions']['$t'] = 'N/A'
+            }
         }
     }
 }
