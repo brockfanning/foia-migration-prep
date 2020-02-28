@@ -50,9 +50,12 @@ for (const file of files) {
 
     // If we had no components, that means the agency is the component. So we
     // double-check that the agency's abbreviation is also an agency component
-    // abbreviation.
+    // abbreviation, and if not print a warning.
     if (numComponents == 0) {
-        // TODO
+        const agencyComponents = getAgencyComponentsForAgency(agencyAbbreviation)
+        if (!agencyComponents.includes(agencyAbbreviation)) {
+            console.log('WARNING: Agency ' + agencyAbbreviation + ' appears to be centralized but there is not a matching component in Drupal.')
+        }
     }
 
     // Fix the DocumentFiscalYearDate.
@@ -671,4 +674,18 @@ function trimAbbreviation(abbreviation) {
   abbreviation = abbreviation.replace('&amp;', '&')
 
   return abbreviation
+}
+
+function getNumberOfComponentsInAgency(agencyAbbreviation) {
+    const matches = drupalComponents.filter(component => {
+        return component.field_agency_abbreviation === agencyAbbreviation
+    })
+    return matches.length
+}
+
+function getAgencyComponentsForAgency(agencyAbbreviation) {
+    const matches = drupalComponents.filter(component => {
+        return component.field_agency_abbreviation === agencyAbbreviation
+    })
+    return matches.map(component => component.field_agency_comp_abbreviation)
 }
