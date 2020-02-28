@@ -46,7 +46,14 @@ for (const file of files) {
     const agencyAbbreviation = fixAgency(report)
 
     // Fix all the agency component abbreviations.
-    fixAgencyComponents(report, agencyAbbreviation)
+    const numComponents = fixAgencyComponents(report, agencyAbbreviation)
+
+    // If we had no components, that means the agency is the component. So we
+    // double-check that the agency's abbreviation is also an agency component
+    // abbreviation.
+    if (numComponents == 0) {
+        // TODO
+    }
 
     // Fix the DocumentFiscalYearDate.
     fixDocumentFiscalYearDate(report)
@@ -104,38 +111,48 @@ function fixAgency(report) {
 }
 
 function fixAgencyComponents(report, agencyAbbreviation) {
+    let numComponents = 0
+
     if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
         // This agency has no components, so we are done.
-        return
+        return numComponents
     }
     // Sometimes it is not an array.
     if (!Array.isArray(report['nc:Organization']['nc:OrganizationSubUnit'])) {
         fixAgencyComponent(report['nc:Organization']['nc:OrganizationSubUnit'], agencyAbbreviation)
+        numComponents += 1
     }
     else {
         for (const agencyComponent of report['nc:Organization']['nc:OrganizationSubUnit']) {
             fixAgencyComponent(agencyComponent, agencyAbbreviation)
+            numComponents += 1
         }
     }
+    return numComponents
 }
 
-function fixAgencyComponent(agencyComponent, agencyAbbreviation) {
-    const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
+function fixAgencyComponentAbbreviation(agencyComponentAbbreviation, agencyAbbreviation) {
     // Do we need to fix anything?
-    const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
+    const trimmedAbbreviation = trimAbbreviation(agencyComponentAbbreviation)
     if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
         // There is already one in Drupal, so we are done.
-        if (trimmedAbbreviation != existingAbbreviation) {
-            DEBUG && console.log('COMPONENT: Automatically changed ' + existingAbbreviation + ' to ' + trimmedAbbreviation)
+        if (trimmedAbbreviation != agencyComponentAbbreviation) {
+            DEBUG && console.log('COMPONENT: Automatically changed ' + agencyComponentAbbreviation + ' to ' + trimmedAbbreviation)
         }
-        return
+        return trimmedAbbreviation
     }
     // Attempt to fix it.
     if (!(agencyAbbreviation in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agencyAbbreviation])) {
         throw 'Agency not found: ' + trimmedAbbreviation + ' in ' + agencyAbbreviation
     }
     const fixedAbbreviation = agencyComponentFixes[agencyAbbreviation][trimmedAbbreviation]
-    DEBUG && console.log('COMPONENT: Pre-configured map changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
+    DEBUG && console.log('COMPONENT: Pre-configured map changed ' + agencyComponentAbbreviation + ' to ' + fixedAbbreviation)
+    return fixedAbbreviation
+}
+
+function fixAgencyComponent(agencyComponent, agencyAbbreviation) {
+    const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
+    const fixedAbbreviation = fixAgencyComponentAbbreviation(existingAbbreviation, agencyAbbreviation)
     agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
 }
 

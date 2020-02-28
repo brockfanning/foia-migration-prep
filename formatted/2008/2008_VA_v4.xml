@@ -27,7 +27,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG2">
             <nc:OrganizationAbbreviationText>
-                Admin (03)
+                Admin
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Administration
@@ -35,7 +35,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG3">
             <nc:OrganizationAbbreviationText>
-                BVA (01)
+                BVA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Board of Veterans Appeals
@@ -67,7 +67,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG7">
             <nc:OrganizationAbbreviationText>
-                GC (02)
+                GC
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 General Counsel
@@ -83,7 +83,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG9">
             <nc:OrganizationAbbreviationText>
-                IG (50)
+                IG
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Inspector General
@@ -91,7 +91,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG10">
             <nc:OrganizationAbbreviationText>
-                NCA (40)
+                NCA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 National Cemetery Administration
@@ -99,7 +99,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG11">
             <nc:OrganizationAbbreviationText>
-                OASHRA (006)
+                OASHRA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of the Assistant Secretary for Human Resources & Administration
@@ -107,7 +107,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG12">
             <nc:OrganizationAbbreviationText>
-                OASP&IA (002)
+                OASP&IA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of the Assistant Secretary for Public & Intergovernmental Affairs
@@ -115,7 +115,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG13">
             <nc:OrganizationAbbreviationText>
-                ODASB (041)
+                ODASB
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of the Deputy Assistant Secretary for Budget
@@ -123,7 +123,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG14">
             <nc:OrganizationAbbreviationText>
-                ODASIA (075)
+                ODASIA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of the Deputy Assistant Secretary for Intergovernmental Affairs
@@ -131,7 +131,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG15">
             <nc:OrganizationAbbreviationText>
-                OF (047)
+                OF
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of Finance
@@ -147,7 +147,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG17">
             <nc:OrganizationAbbreviationText>
-                MGMT (004)
+                MGMT
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of Management
@@ -155,7 +155,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG18">
             <nc:OrganizationAbbreviationText>
-                ORM (08)
+                ORM
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of Resolution Management
@@ -163,7 +163,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG19">
             <nc:OrganizationAbbreviationText>
-                OSDBU (00SB)
+                OSDBU
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of Small & Disadvantaged Business Utilization
@@ -171,7 +171,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG20">
             <nc:OrganizationAbbreviationText>
-                P&P (008)
+                P&P
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Policy and Planning
@@ -179,7 +179,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG21">
             <nc:OrganizationAbbreviationText>
-                PA (80)
+                PA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Public Affairs
@@ -195,7 +195,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG23">
             <nc:OrganizationAbbreviationText>
-                SEC (00)
+                SEC
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Office of the Secretary
@@ -211,7 +211,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG25">
             <nc:OrganizationAbbreviationText>
-                VBA (20)
+                VBA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Veterans Benefits Administration
@@ -219,7 +219,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG26">
             <nc:OrganizationAbbreviationText>
-                VCS (785)
+                VCS
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Veterans Canteen Service VACO
@@ -227,7 +227,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG27">
             <nc:OrganizationAbbreviationText>
-                VHA (10)
+                VHA
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Veterans Health Administration
