@@ -51,6 +51,7 @@ for (const file of files) {
 
     // Fix any elements missing content.
     addOldItemSections(report)
+    addExemption3StatuteSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -141,6 +142,22 @@ function addOldItemSections(report) {
                     }
                 ]
             }
+        }
+    }
+}
+
+function addExemption3StatuteSection(report) {
+    if (!('foia:ReliedUponStatute' in report['foia:Exemption3StatuteSection'])) {
+        report['foia:Exemption3StatuteSection']['foia:ReliedUponStatute'] = {
+            's:id': 'ES8',
+            'j:StatuteDescriptionText': { '$t': '0' },
+            'foia:ReliedUponStatuteInformationWithheldText': { '$t': '0' },
+            'nc:Case': { 'nc:CaseTitleText': { '$t': 'N/A' } }
+        }
+        report['foia:Exemption3StatuteSection']['foia:ReliedUponStatuteOrganizationAssociation'] = {
+            'foia:ComponentDataReference': { 's:ref': 'ES8' },
+            'nc:OrganizationReference': { 's:ref': 'ORG0' },
+            'foia:ReliedUponStatuteQuantity': { '$t': '0' }
         }
     }
 }

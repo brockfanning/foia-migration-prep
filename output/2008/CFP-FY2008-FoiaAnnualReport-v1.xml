@@ -22,6 +22,28 @@
         <foia:FootnoteText>
             No information was withheld in FY2008 which relied upon Exemption 3 statutes.  Only Agency data is collected.  There are no Component units.
         </foia:FootnoteText>
+        <foia:ReliedUponStatute s:id="ES8">
+            <j:StatuteDescriptionText>
+                0
+            </j:StatuteDescriptionText>
+            <foia:ReliedUponStatuteInformationWithheldText>
+                0
+            </foia:ReliedUponStatuteInformationWithheldText>
+            <nc:Case>
+                <nc:CaseTitleText>
+                    N/A
+                </nc:CaseTitleText>
+            </nc:Case>
+        </foia:ReliedUponStatute>
+        <foia:ReliedUponStatuteOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ES8">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+            <foia:ReliedUponStatuteQuantity>
+                0
+            </foia:ReliedUponStatuteQuantity>
+        </foia:ReliedUponStatuteOrganizationAssociation>
     </foia:Exemption3StatuteSection>
     <foia:ProcessedRequestSection>
         <foia:ProcessingStatistics s:id="PS1">

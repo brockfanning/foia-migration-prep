@@ -35,6 +35,28 @@
         </nc:OrganizationSubUnit>
     </nc:Organization>
     <foia:Exemption3StatuteSection>
+        <foia:ReliedUponStatute s:id="ES8">
+            <j:StatuteDescriptionText>
+                0
+            </j:StatuteDescriptionText>
+            <foia:ReliedUponStatuteInformationWithheldText>
+                0
+            </foia:ReliedUponStatuteInformationWithheldText>
+            <nc:Case>
+                <nc:CaseTitleText>
+                    N/A
+                </nc:CaseTitleText>
+            </nc:Case>
+        </foia:ReliedUponStatute>
+        <foia:ReliedUponStatuteOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ES8">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+            <foia:ReliedUponStatuteQuantity>
+                0
+            </foia:ReliedUponStatuteQuantity>
+        </foia:ReliedUponStatuteOrganizationAssociation>
     </foia:Exemption3StatuteSection>
     <foia:ProcessedRequestSection>
         <foia:ProcessingStatistics s:id="PS1">
