@@ -848,6 +848,20 @@
         </foia:PersonnelAndCostOrganizationAssociation>
     </foia:PersonnelAndCostSection>
     <foia:FeesCollectedSection>
+        <foia:FeesCollected s:id="FC1">
+            <foia:FeesCollectedAmount>
+                0
+            </foia:FeesCollectedAmount>
+            <foia:FeesCollectedCostPercent>
+                0
+            </foia:FeesCollectedCostPercent>
+        </foia:FeesCollected>
+        <foia:FeesCollectedOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="FC1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:FeesCollectedOrganizationAssociation>
     </foia:FeesCollectedSection>
     <foia:BacklogSection>
         <foia:Backlog s:id="BK1">
@@ -944,8 +958,42 @@
         </foia:BacklogComparisonOrganizationAssociation>
     </foia:BackloggedRequestComparisonSection>
     <foia:ProcessedAppealComparisonSection>
+        <foia:ProcessingComparison s:id="APC1">
+            <foia:ReceivedLastYearQuantity>
+                0
+            </foia:ReceivedLastYearQuantity>
+            <foia:ReceivedCurrentYearQuantity>
+                0
+            </foia:ReceivedCurrentYearQuantity>
+            <foia:ProcessedLastYearQuantity>
+                0
+            </foia:ProcessedLastYearQuantity>
+            <foia:ProcessedCurrentYearQuantity>
+                0
+            </foia:ProcessedCurrentYearQuantity>
+        </foia:ProcessingComparison>
+        <foia:PendingPerfectedRequestsOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="APC1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:PendingPerfectedRequestsOrganizationAssociation>
     </foia:ProcessedAppealComparisonSection>
     <foia:BackloggedAppealComparisonSection>
+        <foia:BacklogComparison s:id="ABC1">
+            <foia:BacklogLastYearQuantity>
+                0
+            </foia:BacklogLastYearQuantity>
+            <foia:BacklogCurrentYearQuantity>
+                0
+            </foia:BacklogCurrentYearQuantity>
+        </foia:BacklogComparison>
+        <foia:BacklogComparisonOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="ABC1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:BacklogComparisonOrganizationAssociation>
     </foia:BackloggedAppealComparisonSection>
     <foia:DocumentFiscalYearDate>
         2008

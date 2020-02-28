@@ -66,6 +66,15 @@ for (const file of files) {
     addSimpleResponseTimeIncrementsSection(report)
     addExpeditedResponseTimeIncrementsSection(report)
     addPendingPerfectedRequestsSection(report)
+    addExpeditedProcessingSection(report)
+    addFeeWaiverSection(report)
+    addPersonnelAndCostSection(report)
+    addFeesCollectedSection(report)
+    addBacklogSection(report)
+    addProcessedRequestComparisonSection(report)
+    addBackloggedRequestComparisonSection(report)
+    addProcessedAppealComparisonSection(report)
+    addBackloggedAppealComparisonSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -378,7 +387,147 @@ function addPendingPerfectedRequestsSection(report) {
     }
 }
 
+function addExpeditedProcessingSection(report) {
+    const section = 'foia:ExpeditedProcessingSection'
+    const sectionId = 'EP0'
+    const subsection = 'foia:ExpeditedProcessing'
+    const orgAssociation = 'foia:ExpeditedProcessingOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getProcessedRequests()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][subsection]['foia:AdjudicationWithinTenDaysQuantity'] = { '$t': 0 }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addFeeWaiverSection(report) {
+    const section = 'foia:FeeWaiverSection'
+    const sectionId = 'FW0'
+    const subsection = 'foia:FeeWaiver'
+    const orgAssociation = 'foia:FeeWaiverOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getProcessedRequests()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addPersonnelAndCostSection(report) {
+    const section = 'foia:PersonnelAndCostSection'
+    const sectionId = 'PC1'
+    const subsection = 'foia:PersonnelAndCost'
+    const orgAssociation = 'foia:PersonnelAndCostOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:FullTimeEmployeeQuantity': { '$t': 0 },
+            'foia:EquivalentFullTimeEmployeeQuantity': { '$t': 0 },
+            'foia:TotalFullTimeStaffQuantity': { '$t': 0 },
+            'foia:ProcessingCostAmount': { '$t': 0 },
+            'foia:LitigationCostAmount': { '$t': 0 },
+            'foia:TotalCostAmount': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addFeesCollectedSection(report) {
+    const section = 'foia:FeesCollectedSection'
+    const sectionId = 'FC1'
+    const subsection = 'foia:FeesCollected'
+    const orgAssociation = 'foia:FeesCollectedOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:FeesCollectedAmount': { '$t': 0 },
+            'foia:FeesCollectedCostPercent': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addBacklogSection(report) {
+    const section = 'foia:BacklogSection'
+    const sectionId = 'BK1'
+    const subsection = 'foia:Backlog'
+    const orgAssociation = 'foia:BacklogOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:BackloggedRequestQuantity': { '$t': 0 },
+            'foia:BackloggedAppealQuantity': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addProcessedRequestComparisonSection(report) {
+    const section = 'foia:ProcessedRequestComparisonSection'
+    const sectionId = 'RPC1'
+    const subsection = 'foia:ProcessingComparison'
+    const orgAssociation = 'foia:ProcessingComparisonOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getProcessedComparisons()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addBackloggedRequestComparisonSection(report) {
+    const section = 'foia:BackloggedRequestComparisonSection'
+    const sectionId = 'RBC1'
+    const subsection = 'foia:BacklogComparison'
+    const orgAssociation = 'foia:BacklogComparisonOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getBacklogComparisons()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addProcessedAppealComparisonSection(report) {
+    const section = 'foia:ProcessedAppealComparisonSection'
+    const sectionId = 'APC1'
+    const subsection = 'foia:ProcessingComparison'
+    const orgAssociation = 'foia:PendingPerfectedRequestsOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getProcessedComparisons()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addBackloggedAppealComparisonSection(report) {
+    const section = 'foia:BackloggedAppealComparisonSection'
+    const sectionId = 'ABC1'
+    const subsection = 'foia:BacklogComparison'
+    const orgAssociation = 'foia:BacklogComparisonOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = getBacklogComparisons()
+        report[section][subsection]['s:id'] = sectionId
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
 // ****************** HELPER FUNCTIONS **************************
+
+// Get a blank object for processed comparisons.
+function getProcessedComparisons() {
+    return {
+        'foia:ReceivedLastYearQuantity': { '$t': 0 },
+        'foia:ReceivedCurrentYearQuantity': { '$t': 0 },
+        'foia:ProcessedLastYearQuantity': { '$t': 0 },
+        'foia:ProcessedCurrentYearQuantity': { '$t': 0 },
+    }
+}
+
+// Get a blank object for backlog comparisons.
+function getBacklogComparisons() {
+    return {
+        'foia:BacklogLastYearQuantity': { '$t': 0 },
+        'foia:BacklogCurrentYearQuantity': { '$t': 0 },
+    }
+}
 
 // Get the blank content for a time increments section.
 function getTimeIncrements() {
@@ -462,6 +611,16 @@ function getPendingRequests() {
         'foia:PendingRequestQuantity': { '$t': 0 },
         'foia:PendingRequestMedianDaysValue': { '$t': 0 },
         'foia:PendingRequestAverageDaysValue': { '$t': 0 },
+    }
+}
+
+// Get a blank object for processed requests.
+function getProcessedRequests() {
+    return{
+        'foia:RequestGrantedQuantity': { '$t': 0 },
+        'foia:RequestDeniedQuantity': { '$t': 0 },
+        'foia:AdjudicationMedianDaysValue': { '$t': 0 },
+        'foia:AdjudicationAverageDaysValue': { '$t': 0 },
     }
 }
 
