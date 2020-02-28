@@ -106,9 +106,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -5863,4 +5860,7 @@
             “Starting with the Annual Report for Fiscal Year 2009,” Department of Justice guidance indicated agencies were to “provide the number of backlogged administrative appeals as of the end of the fiscal year from the previous Annual Report and the number of backlogged administrative appeals as of the end of the fiscal year from the current Annual Report.”  See http://www.justice.gov/oip/foiapost/guidance-annualreport-052008.pdf.    Based on this guidance, the agency’s FY 2008 Annual Report did include the above referenced comparison data.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

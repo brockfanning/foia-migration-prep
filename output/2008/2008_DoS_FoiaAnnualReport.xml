@@ -34,9 +34,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -4200,4 +4197,7 @@ Nov. 6, 1979)
             Backlog from previous annual report was not reported in 2008, which is why 0 is used.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

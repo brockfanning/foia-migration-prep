@@ -34,9 +34,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
     </foia:Exemption3StatuteSection>
     <foia:ProcessedRequestSection>
@@ -2562,4 +2559,7 @@
             </nc:OrganizationReference>
         </foia:BacklogComparisonOrganizationAssociation>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

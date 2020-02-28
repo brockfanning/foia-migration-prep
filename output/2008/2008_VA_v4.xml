@@ -242,9 +242,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -18057,4 +18054,7 @@
             Due to the fact that the VA did not begin tracking backlogged appeals until FY 2008, the VA is unable to report the number of backlogged appeals as of the end of the previous fiscal year.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

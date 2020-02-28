@@ -170,9 +170,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -21503,4 +21500,7 @@ At this time USSS is unable to extract the raw data from its tracking system nee
             Number of Backlogged Appeals as of End of the Fiscal Year from Previous Annual Report for Fiscal Year 2007, data unavailable in this format
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

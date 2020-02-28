@@ -258,9 +258,6 @@
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -34785,4 +34782,7 @@
             FY08 first year for reporting.  There are no comparable numbers for FY07.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

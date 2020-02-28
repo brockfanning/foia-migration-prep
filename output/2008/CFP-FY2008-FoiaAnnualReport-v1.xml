@@ -18,9 +18,6 @@
             Committee for Purchase from People Who Are Blind or Severely Disabled
         </nc:OrganizationName>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:FootnoteText>
             No information was withheld in FY2008 which relied upon Exemption 3 statutes.  Only Agency data is collected.  There are no Component units.
@@ -1108,4 +1105,7 @@
             All data applies to the Agency Overall because there are no Component units.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

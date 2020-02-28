@@ -18,9 +18,6 @@
             Chemical Safety and Hazard Investigation Board
         </nc:OrganizationName>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -1147,4 +1144,7 @@
             </nc:OrganizationReference>
         </foia:BacklogComparisonOrganizationAssociation>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>

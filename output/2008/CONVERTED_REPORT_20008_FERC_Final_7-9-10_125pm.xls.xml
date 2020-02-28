@@ -18,9 +18,6 @@
             FEDERAL ENERGY REGULATORY COMMISSION
         </nc:OrganizationName>
     </nc:Organization>
-    <foia:DocumentFiscalYear>
-        2008
-    </foia:DocumentFiscalYear>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">
             <j:StatuteDescriptionText>
@@ -1212,4 +1209,7 @@ reported until FY2009.
             Number of Backlogged Appeals as of End of the Fiscal Year from Previous Annual Report - Data not required to be reported until FY2009.
         </foia:FootnoteText>
     </foia:BackloggedAppealComparisonSection>
+    <foia:DocumentFiscalYearDate>
+        2008
+    </foia:DocumentFiscalYearDate>
 </iepd:FoiaAnnualReport>
