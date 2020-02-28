@@ -58,7 +58,7 @@ for (const file of files) {
     addComponentAppliedExemptions(report)
     addAppealDenialOtherReasonSection(report)
     addProcessedConsultationSection(report)
-    //addAppealNonExemptionDenialSection(report)
+    addAppealNonExemptionDenialSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
