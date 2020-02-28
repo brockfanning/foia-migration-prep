@@ -57,6 +57,7 @@ for (const file of files) {
     addRequestDenialOtherReasonSection(report)
     addComponentAppliedExemptions(report)
     addAppealDenialOtherReasonSection(report)
+    addProcessedConsultationSection(report)
 
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
@@ -228,6 +229,22 @@ function addAppealDenialOtherReasonSection(report) {
             'foia:ComponentOtherDenialReasonQuantity': { '$t': 0 }
         }
         report[section]['foia:OtherDenialReasonOrganizationAssociation'] = orgAssociation(sectionId)
+    }
+}
+
+function addProcessedConsultationSection(report) {
+    section = 'foia:ProcessedConsultationSection'
+    sectionId = 'PCN1'
+    subsection = 'foia:ProcessingStatistics'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:ProcessingStatisticsPendingAtStartQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsReceivedQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsProcessedQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsPendingAtEndQuantity': { '$t': 0 },
+        }
+        report[section]['foia:ProcessingStatisticsOrganizationAssociation'] = orgAssociation(sectionId)
     }
 }
 

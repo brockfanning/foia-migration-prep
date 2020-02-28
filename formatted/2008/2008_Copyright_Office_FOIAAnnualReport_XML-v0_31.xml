@@ -1023,6 +1023,26 @@
         </foia:FootnoteText>
     </foia:BacklogSection>
     <foia:ProcessedConsultationSection>
+        <foia:ProcessingStatistics s:id="PCN1">
+            <foia:ProcessingStatisticsPendingAtStartQuantity>
+                0
+            </foia:ProcessingStatisticsPendingAtStartQuantity>
+            <foia:ProcessingStatisticsReceivedQuantity>
+                0
+            </foia:ProcessingStatisticsReceivedQuantity>
+            <foia:ProcessingStatisticsProcessedQuantity>
+                0
+            </foia:ProcessingStatisticsProcessedQuantity>
+            <foia:ProcessingStatisticsPendingAtEndQuantity>
+                0
+            </foia:ProcessingStatisticsPendingAtEndQuantity>
+        </foia:ProcessingStatistics>
+        <foia:ProcessingStatisticsOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="PCN1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:ProcessingStatisticsOrganizationAssociation>
     </foia:ProcessedConsultationSection>
     <foia:OldestPendingConsultationSection>
         <foia:OldestPendingItems s:id="OPC10">
