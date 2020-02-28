@@ -33,12 +33,28 @@ const files = fs.readdirSync(inputFolder)
 for (const file of files) {
     const inputFilePath = path.join(inputFolder, file)
     const outputFilePath = path.join(outputFolder, file)
+
+    // Import the XML into a JSON object.
     const input = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
     const json = JSON.parse(parser.toJson(input, { reversible: true }))
+
+    // Fix (and get) the agency abbreviation.
     const agencyAbbreviation = fixAgency(json)
+
+    // Fix all the agency component abbreviations.
     fixAgencyComponents(json, agencyAbbreviation)
+
+    // Fix the DocumentFiscalYearDate.
+    fixDocumentFiscalYearDate(json)
+
+    // Fix any elements missing content.
+    addMissingContent(json)
+
+    // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
     const xml = parser.toXml(stringified)
+
+    // Format it nicely and write to disk.
     fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
 }
 
@@ -89,6 +105,25 @@ function fixAgencyComponents(json, agencyAbbreviation) {
         agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
     }
 }
+
+function fixDocumentFiscalYearDate(json) {
+    if ('foia:DocumentFiscalYear' in json['iepd:FoiaAnnualReport']) {
+        json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYearDate'] = json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYear']
+        delete json['iepd:FoiaAnnualReport']['foia:DocumentFiscalYear']
+        DEBUG && console.log('XML: changed DocumentFiscalYear to DocumentFiscalYearDate')
+    }
+}
+
+function addMissingContent(json) {
+    DEBUG && console.log(json)
+    if ('OldestPendingAppealSection' in json['iepd:FoiaAnnualReport']) {
+
+    }
+
+
+}
+
+// ****************** HELPER FUNCTIONS **************************
 
 // Look up in the list of agencies whether an abbreviation is there.
 function agencyAbbreviationExists(abbreviation) {
