@@ -8,7 +8,7 @@ const drupal = require('./helpers/drupal')
 
 const args = process.argv.slice(2)
 if (args.length < 1) {
-    console.log('Please indicate a year. Example: node check-agencies.js 2008')
+    console.log('Please indicate a year. Example: node check-abbreviations.js 2008')
     return
 }
 
