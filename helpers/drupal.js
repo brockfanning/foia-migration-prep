@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const DEBUG = true
+const DEBUG = false
 
 const drupalAgencies = JSON.parse(fs.readFileSync('helpers/data/drupal-agencies.json', { encoding: 'utf-8' }))
 
@@ -44,7 +44,7 @@ function fixAgencyComponent(abbreviation, agency) {
     }
     // Attempt to fix it.
     if (!(agency in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agency])) {
-        throw 'Agency not found: ' + trimmedAbbreviation + ' in ' + agency
+        throw 'Component not found: ' + trimmedAbbreviation + ' in ' + agency
     }
     const fixedAbbreviation = agencyComponentFixes[agency][trimmedAbbreviation]
     DEBUG && console.log('COMPONENT: Pre-configured map changed ' + abbreviation + ' to ' + fixedAbbreviation)
@@ -89,8 +89,16 @@ function getAgencyComponentsForAgency(agency) {
     return matches.map(component => component.field_agency_comp_abbreviation)
 }
 
+function getAgencyNameFromAbbreviation(abbreviation) {
+    const matches = drupalAgencies.filter(agency => {
+        return agency.field_agency_abbreviation === abbreviation
+    })
+    return matches[0].name
+}
+
 module.exports = {
     fixAgency,
     fixAgencyComponent,
     getAgencyComponentsForAgency,
+    getAgencyNameFromAbbreviation,
 }

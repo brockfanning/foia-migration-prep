@@ -2,8 +2,8 @@
   "name": "foia-migration-prep",
   "version": "1.0.0",
   "description": "",
-  "main": "find-ending-year.js",
   "dependencies": {
+    "csv-stringify": "5.3.6",
     "xml-formatter": "1.2.0",
     "xml2json": "0.12.0"
   },

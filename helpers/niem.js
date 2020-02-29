@@ -1,4 +1,4 @@
-const DEBUG = true
+const DEBUG = false
 
 function getAgency(report) {
     return report['nc:Organization']['nc:OrganizationAbbreviationText']['$t']
