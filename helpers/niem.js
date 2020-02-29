@@ -1,162 +1,57 @@
-const path = require('path')
-const fs = require('fs')
-const parser = require('xml2json')
-const xmlFormatter = require('xml-formatter');
+const DEBUG = true
 
-const DEBUG = false
-
-const args = process.argv.slice(2)
-if (args.length < 1) {
-    console.log('Please indicate a year. Example: node prep.js 2008')
-    return
-}
-const drupalAgencies = JSON.parse(fs.readFileSync('drupal-agencies.json', { encoding: 'utf-8' }))
-
-// Import the components. Because these come from JSON in Drupal we have to process them
-// a bit so that they match what will be in the XML.
-let drupalComponentsJson = fs.readFileSync('drupal-agency-components.json', { encoding: 'utf-8' });
-drupalComponentsJson = drupalComponentsJson.replace(/\\u0026/g, '&')
-drupalComponentsJson = drupalComponentsJson.replace(/&amp;/g, '&')
-drupalComponentsJson = drupalComponentsJson.replace(/&#039;/g, "'")
-drupalComponentsJson = drupalComponentsJson.replace(/\\u2013/g, "–")
-drupalComponentsJson = drupalComponentsJson.replace(/\\\//g, "/")
-const drupalComponents = JSON.parse(drupalComponentsJson)
-const agencyFixes = JSON.parse(fs.readFileSync('xml-agency-fixes.json', { encoding: 'utf-8' }))
-const agencyComponentFixes = JSON.parse(fs.readFileSync('xml-agency-component-fixes.json', { encoding: 'utf-8' }))
-
-const year = args[0]
-const inputFolder = path.join('input', year)
-const outputFolder = path.join('output', year)
-const formattedFolder = path.join('formatted', year)
-const xmlFormatterOptions = { lineSeparator: '\n' }
-
-const files = fs.readdirSync(inputFolder)
-for (const file of files) {
-    const inputFilePath = path.join(inputFolder, file)
-    const outputFilePath = path.join(outputFolder, file)
-    const formattedFilePath = path.join(formattedFolder, file)
-
-    // Import the XML into a JSON object.
-    const input = fs.readFileSync(inputFilePath, { encoding: 'utf-8' })
-    const json = JSON.parse(parser.toJson(input, { reversible: true }))
-    // To make the drilling-down a bit easier.
-    const report = json['iepd:FoiaAnnualReport']
-
-    // Fix (and get) the agency abbreviation.
-    const agencyAbbreviation = fixAgency(report)
-
-    // Fix all the agency component abbreviations.
-    const numComponents = fixAgencyComponents(report, agencyAbbreviation)
-
-    // If we had no components, that means the agency is the component. So we
-    // double-check that the agency's abbreviation is also an agency component
-    // abbreviation, and if not print a warning.
-    if (numComponents == 0) {
-        const agencyComponents = getAgencyComponentsForAgency(agencyAbbreviation)
-        if (!agencyComponents.includes(agencyAbbreviation)) {
-            console.log('WARNING: Agency ' + agencyAbbreviation + ' appears to be centralized but there is not a matching component in Drupal.')
-        }
-    }
-
-    // Fix the DocumentFiscalYearDate.
-    fixDocumentFiscalYearDate(report)
-
-    // Fix any elements missing content.
-    addOldItemSections(report)
-    addExemption3StatuteSection(report)
-    addRequestDenialOtherReasonSection(report)
-    addComponentAppliedExemptions(report)
-    addAppealDenialOtherReasonSection(report)
-    addProcessedConsultationSection(report)
-    addAppealNonExemptionDenialSection(report)
-    addComplexResponseTimeIncrementsSection(report)
-    addAppealResponseTimeSection(report)
-    addProcessedResponseTimeSection(report)
-    addInformationGrantedResponseTimeSection(report)
-    addSimpleResponseTimeIncrementsSection(report)
-    addExpeditedResponseTimeIncrementsSection(report)
-    addPendingPerfectedRequestsSection(report)
-    addExpeditedProcessingSection(report)
-    addFeeWaiverSection(report)
-    addPersonnelAndCostSection(report)
-    addFeesCollectedSection(report)
-    addBacklogSection(report)
-    addProcessedRequestComparisonSection(report)
-    addBackloggedRequestComparisonSection(report)
-    addProcessedAppealComparisonSection(report)
-    addBackloggedAppealComparisonSection(report)
-
-    // Export the JSON object back into XML.
-    const stringified = JSON.stringify(json)
-    const xml = parser.toXml(stringified, { sanitize: true }).replace(/\r?\n|\r/g, ' ')
-
-    // Format it nicely and write to disk.
-    fs.writeFileSync(outputFilePath, '<?xml version="1.0"?>' + xml)
-    fs.writeFileSync(formattedFilePath, '<?xml version="1.0"?>' + xmlFormatter(xml, xmlFormatterOptions))
+function getAgency(report) {
+    return report['nc:Organization']['nc:OrganizationAbbreviationText']['$t']
 }
 
-function fixAgency(report) {
-    const existingAbbreviation = report['nc:Organization']['nc:OrganizationAbbreviationText']['$t']
-    // Do we need to fix anything?
-    const trimmedAbbreviation = trimAbbreviation(existingAbbreviation)
-    if (agencyAbbreviationExists(trimmedAbbreviation)) {
-        // There is already one in Drupal, so we are done.
-        return trimmedAbbreviation
-    }
-    // Attempt to fix it.
-    if (!(trimmedAbbreviation in agencyFixes)) {
-        throw 'Agency not found: ' + trimmedAbbreviation
-    }
-    const fixedAbbreviation = agencyFixes[trimmedAbbreviation]
-    DEBUG && console.log('AGENCY: Changed ' + existingAbbreviation + ' to ' + fixedAbbreviation)
-    report['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
-    return fixedAbbreviation
+function setAgency(report, abbreviation) {
+    return report['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = abbreviation
 }
 
-function fixAgencyComponents(report, agencyAbbreviation) {
-    let numComponents = 0
+function getAgencyComponents(report) {
 
     if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
         // This agency has no components, so we are done.
-        return numComponents
+        return []
     }
-    // Sometimes it is not an array.
-    if (!Array.isArray(report['nc:Organization']['nc:OrganizationSubUnit'])) {
-        fixAgencyComponent(report['nc:Organization']['nc:OrganizationSubUnit'], agencyAbbreviation)
-        numComponents += 1
+
+    let agencyComponentElements = report['nc:Organization']['nc:OrganizationSubUnit']
+
+    // Sometimes it is not an array, just a single object.
+    if (!Array.isArray(agencyComponentElements)) {
+        return [agencyComponentElements['nc:OrganizationAbbreviationText']['$t']]
     }
+
+    // Otherwise assume it is an array of objects.
+    return agencyComponentElements.map(element => element['nc:OrganizationAbbreviationText']['$t'])
+}
+
+function replaceAgencyComponent(report, search, replace) {
+
+    const agencyComponentElements = report['nc:Organization']['nc:OrganizationSubUnit']
+    let success = false
+
+    // Sometimes it is not an array, just a single object.
+    if (!Array.isArray(agencyComponentElements)) {
+        if (agencyComponentElements['nc:OrganizationAbbreviationText']['$t'] == search) {
+            agencyComponentElements['nc:OrganizationAbbreviationText']['$t'] = replace
+            success = true
+        }
+    }
+    // Otherwise assume it is an array of objects.
     else {
-        for (const agencyComponent of report['nc:Organization']['nc:OrganizationSubUnit']) {
-            fixAgencyComponent(agencyComponent, agencyAbbreviation)
-            numComponents += 1
+        for (const agencyComponentElement of agencyComponentElements) {
+            if (agencyComponentElement['nc:OrganizationAbbreviationText']['$t'] == search) {
+                agencyComponentElement['nc:OrganizationAbbreviationText']['$t'] = replace
+                success = true
+                break
+            }
         }
     }
-    return numComponents
-}
 
-function fixAgencyComponentAbbreviation(agencyComponentAbbreviation, agencyAbbreviation) {
-    // Do we need to fix anything?
-    const trimmedAbbreviation = trimAbbreviation(agencyComponentAbbreviation)
-    if (agencyComponentAbbreviationExists(agencyAbbreviation, trimmedAbbreviation)) {
-        // There is already one in Drupal, so we are done.
-        if (trimmedAbbreviation != agencyComponentAbbreviation) {
-            DEBUG && console.log('COMPONENT: Automatically changed ' + agencyComponentAbbreviation + ' to ' + trimmedAbbreviation)
-        }
-        return trimmedAbbreviation
+    if (!success) {
+        throw 'Unable to find ' + search + ' when trying to replace it with ' + replace
     }
-    // Attempt to fix it.
-    if (!(agencyAbbreviation in agencyComponentFixes) || !(trimmedAbbreviation in agencyComponentFixes[agencyAbbreviation])) {
-        throw 'Agency not found: ' + trimmedAbbreviation + ' in ' + agencyAbbreviation
-    }
-    const fixedAbbreviation = agencyComponentFixes[agencyAbbreviation][trimmedAbbreviation]
-    DEBUG && console.log('COMPONENT: Pre-configured map changed ' + agencyComponentAbbreviation + ' to ' + fixedAbbreviation)
-    return fixedAbbreviation
-}
-
-function fixAgencyComponent(agencyComponent, agencyAbbreviation) {
-    const existingAbbreviation = agencyComponent['nc:OrganizationAbbreviationText']['$t']
-    const fixedAbbreviation = fixAgencyComponentAbbreviation(existingAbbreviation, agencyAbbreviation)
-    agencyComponent['nc:OrganizationAbbreviationText']['$t'] = fixedAbbreviation
 }
 
 function fixDocumentFiscalYearDate(report) {
@@ -644,48 +539,33 @@ function getProcessedRequests() {
     }
 }
 
-// Look up in the list of agencies whether an abbreviation is there.
-function agencyAbbreviationExists(abbreviation) {
-    const matches = drupalAgencies.filter(agency => {
-        return agency.field_agency_abbreviation === abbreviation
-    })
-    return matches.length > 0
-}
-
-// Look up in the list of agency components where an abbreviation is there.
-function agencyComponentAbbreviationExists(agencyAbbreviation, componentAbbreviation) {
-    const matches = drupalComponents.filter(component => {
-        return component.field_agency_comp_abbreviation === componentAbbreviation &&
-               component.field_agency_abbreviation === agencyAbbreviation
-    })
-    return matches.length > 0
-}
-
-// Fix common problems in agency component abbreviations.
-function trimAbbreviation(abbreviation) {
-  // First trim whitespace.
-  abbreviation = abbreviation.trim()
-  // Next look for a second word with parentheses.
-  const words = abbreviation.split(' ')
-  if (words.length > 1 && words[1].startsWith('(') && words[1].endsWith(')')) {
-    abbreviation = words[0]
-  }
-  // Unescape ampersands, since it was in XML.
-  abbreviation = abbreviation.replace('&amp;', '&')
-
-  return abbreviation
-}
-
-function getNumberOfComponentsInAgency(agencyAbbreviation) {
-    const matches = drupalComponents.filter(component => {
-        return component.field_agency_abbreviation === agencyAbbreviation
-    })
-    return matches.length
-}
-
-function getAgencyComponentsForAgency(agencyAbbreviation) {
-    const matches = drupalComponents.filter(component => {
-        return component.field_agency_abbreviation === agencyAbbreviation
-    })
-    return matches.map(component => component.field_agency_comp_abbreviation)
+module.exports = {
+  getAgency,
+  setAgency,
+  getAgencyComponents,
+  replaceAgencyComponent,
+  fixDocumentFiscalYearDate,
+  addOldItemSections,
+  addExemption3StatuteSection,
+  addRequestDenialOtherReasonSection,
+  addComponentAppliedExemptions,
+  addAppealDenialOtherReasonSection,
+  addProcessedConsultationSection,
+  addAppealNonExemptionDenialSection,
+  addComplexResponseTimeIncrementsSection,
+  addAppealResponseTimeSection,
+  addProcessedResponseTimeSection,
+  addInformationGrantedResponseTimeSection,
+  addSimpleResponseTimeIncrementsSection,
+  addExpeditedResponseTimeIncrementsSection,
+  addPendingPerfectedRequestsSection,
+  addExpeditedProcessingSection,
+  addFeeWaiverSection,
+  addPersonnelAndCostSection,
+  addFeesCollectedSection,
+  addBacklogSection,
+  addProcessedRequestComparisonSection,
+  addBackloggedRequestComparisonSection,
+  addProcessedAppealComparisonSection,
+  addBackloggedAppealComparisonSection,
 }
