@@ -1,4 +1,7 @@
 {
+  "CSOSA": {
+    "HQ": "CSOSA"
+  },
   "DHS": {
     "NPPD": "CISA"
   },
@@ -46,7 +49,37 @@
     "OCR-Seattle": "OCR - 10 Seattle",
     "OCR-Metro": "OCR - Metro D.C.",
     "OCR-Cleveland": "OCR - 12 Cleveland",
-    "OCFO-CAM": "OFO-CAM"
+    "OCFO-CAM": "OFO-CAM",
+    "OCR-1 Boston": "OCR - 1 Boston",
+    "OCR-2 New York": "OCR - 2 New York",
+    "OCR-3 Philladelphia": "OCR - 3 Philladelphia",
+    "OCR-4 Atlanta": "OCR - 4 Atlanta",
+    "OCR-5 Chicago": "OCR - 5 Chicago",
+    "OCR-6 Dallas": "OCR - 6 Dallas",
+    "OCR-7 Kansas City": "OCR - 7 Kansas City",
+    "OCR-8 Denver": "OCR - 8 Denver",
+    "OCR-9 San Francisco": "OCR - 9 San Francisco",
+    "OCR-10 Seattle": "OCR - 10 Seattle",
+    "OCR-Metro D.C.": "OCR - Metro D.C.",
+    "OCR-12 Cleveland": "OCR - 12 Cleveland"
+  },
+  "EEOC": {
+    "ATLANTA": "Atlanta",
+    "BIRMINGHAM": "Birmingham",
+    "CHARLOTTE": "Charlotte",
+    "CHICAGO": "Chicago",
+    "DALLAS": "Dallas",
+    "HOUSTON": "Houston",
+    "INDIANAPOLIS": "Indianapolis",
+    "LOS ANGELES": "Los Angeles",
+    "MEMPHIS": "Memphis",
+    "MIAMI": "Miami",
+    "NEW YORK": "New York",
+    "PHILADELPHIA": "Philadelphia",
+    "PHOENIX": "Phoenix",
+    "SAN FRANCISCO": "San Francisco",
+    "ST. LOUIS": "St. Louis",
+    "HDQ": "OLC/HDQ"
   },
   "EPA": {
     "Region 1": "Region 01",
@@ -71,6 +104,9 @@
   },
   "NSF": {
     "Foundation": "NSF"
+  },
+  "NTSB": {
+    "HQ": "NTSB"
   },
   "SEC": {
     "HQ": "SEC"
