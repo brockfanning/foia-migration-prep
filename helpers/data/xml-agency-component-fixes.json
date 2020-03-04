@@ -1,39 +1,31 @@
 {
-  "DOJ": {
-    "Pardon Attorney": "PARDON"
+  "DHS": {
+    "NPPD": "CISA"
   },
-  "DOS": {
-    "DoS": "DOS"
+  "DOC": {
+    "AGC/Admin.": "InfoLaw",
+    "ESA": "OUSEA"
+  },
+  "DoD": {
+    "DoDIG": "DoD IG",
+    "PACOM": "INDO-PACOM"
   },
   "DOE": {
     "NNSA/AL": "NNSA",
     "RL": "ROO",
     "SROO": "SRO"
   },
-  "NASA": {
-    "HQS": "HQ"
+  "DOI": {
+    "Appeals": "FOIA/PA Appeals"
   },
-  "VA": {
-    "A&MM": "OAL",
-    "OC&LA": "C&LA",
-    "OCFM": "CFM",
-    "ODM&EEO": "ODI",
-    "OHRM": "HRM",
-    "OI&T": "OIT",
-    "S&LE": "OSP"
-  },
-  "DHS": {
-    "NPPD": "CISA"
+  "DOJ": {
+    "Pardon Attorney": "PARDON"
   },
   "DOL": {
     "ADJ BDS": "Adj Bds"
   },
-  "DoD": {
-    "DoDIG": "DoD IG",
-    "PACOM": "INDO-PACOM"
-  },
-  "DOI": {
-    "Appeals": "FOIA/PA Appeals"
+  "DOS": {
+    "DoS": "DOS"
   },
   "ED": {
     "OCR-Boston": "OCR - 1 Boston",
@@ -65,14 +57,22 @@
   "HUD": {
     "IG": "OIG"
   },
-  "DOC": {
-    "AGC/Admin.": "InfoLaw",
-    "ESA": "OUSEA"
+  "NASA": {
+    "HQS": "HQ"
   },
   "NSF": {
     "Foundation": "NSF"
   },
   "SEC": {
     "HQ": "SEC"
+  },
+  "VA": {
+    "A&MM": "OAL",
+    "OC&LA": "C&LA",
+    "OCFM": "CFM",
+    "ODM&EEO": "ODI",
+    "OHRM": "HRM",
+    "OI&T": "OIT",
+    "S&LE": "OSP"
   }
 }
