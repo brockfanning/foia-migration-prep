@@ -31,7 +31,8 @@
     "ESA - OFCCP": "OFCCP",
     "ESA - OLMS": "OLMS",
     "ESA - OWCP": "OWCP",
-    "ESA - WHD": "WHD"
+    "ESA - WHD": "WHD",
+    "ESA - OMAP": "OMAP"
   },
   "DOS": {
     "DoS": "DOS"
