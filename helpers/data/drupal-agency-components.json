@@ -3502,5 +3502,11 @@
     "field_agency_comp_abbreviation": "SIGIR",
     "field_agency_abbreviation": "SIGIR",
     "name": "Special Inspector General for Iraq Reconstruction"
+  },
+  {
+    "title": "Legal Services Corporation",
+    "field_agency_comp_abbreviation": "LSC",
+    "field_agency_abbreviation": "LSC",
+    "name": "Legal Services Corporation"
   }
 ]
