@@ -21,7 +21,8 @@
     "SROO": "SRO"
   },
   "DOI": {
-    "Appeals": "FOIA/PA Appeals"
+    "Appeals": "FOIA/PA Appeals",
+    "OSMRE": "OSM"
   },
   "DOJ": {
     "Pardon Attorney": "PARDON",
