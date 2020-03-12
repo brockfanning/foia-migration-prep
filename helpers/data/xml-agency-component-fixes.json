@@ -97,6 +97,9 @@
   "EXIM Bank": {
     "AGENCY": "HQ"
   },
+  "FHFA": {
+    "FHFA FOIA": "FHFA-FOIA"
+  },
   "HUD": {
     "IG": "OIG"
   },
