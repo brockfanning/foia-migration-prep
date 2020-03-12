@@ -12,7 +12,8 @@
   "DoD": {
     "DoDIG": "DoD IG",
     "PACOM": "INDO-PACOM",
-    "COCOM": "SOCOM"
+    "COCOM": "SOCOM",
+    "Navy": "NAVY"
   },
   "DOE": {
     "NNSA/AL": "NNSA",
