@@ -32,7 +32,8 @@
     "ESA - OLMS": "OLMS",
     "ESA - OWCP": "OWCP",
     "ESA - WHD": "WHD",
-    "ESA - OMAP": "OMAP"
+    "ESA - OMAP": "OMAP",
+    "Exec Sec": "EXEC SEC"
   },
   "DOS": {
     "DoS": "DOS"
