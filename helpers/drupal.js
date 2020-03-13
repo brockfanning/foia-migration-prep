@@ -16,6 +16,14 @@ const drupalComponents = JSON.parse(drupalComponentsJson)
 const agencyFixes = JSON.parse(fs.readFileSync('helpers/data/xml-agency-fixes.json', { encoding: 'utf-8' }))
 const agencyComponentFixes = JSON.parse(fs.readFileSync('helpers/data/xml-agency-component-fixes.json', { encoding: 'utf-8' }))
 
+function getAgencies() {
+    return drupalAgencies
+}
+
+function getAgencyComponents() {
+    return drupalComponents
+}
+
 function fixAgency(abbreviation) {
     // Do we need to fix anything?
     const trimmedAbbreviation = normalizeAbbreviation(abbreviation)
@@ -101,4 +109,6 @@ module.exports = {
     fixAgencyComponent,
     getAgencyComponentsForAgency,
     getAgencyNameFromAbbreviation,
+    getAgencies,
+    getAgencyComponents,
 }
