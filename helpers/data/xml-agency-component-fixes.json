@@ -35,7 +35,8 @@
     "ESA - OWCP": "OWCP",
     "ESA - WHD": "WHD",
     "ESA - OMAP": "OMAP",
-    "Exec Sec": "EXEC SEC"
+    "Exec Sec": "EXEC SEC",
+    "DOL": "DOL-Main"
   },
   "DOS": {
     "DoS": "DOS"
