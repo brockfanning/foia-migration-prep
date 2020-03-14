@@ -36,6 +36,7 @@ for (const file of files) {
         const drupalAgencyComponent = drupal.fixAgencyComponent(niemAgencyComponent, agency)
         niem.replaceAgencyComponent(report, niemAgencyComponent, drupalAgencyComponent)
     }
+    const fixedAgencyComponents = niem.getAgencyComponents(report)
 
     // If we had no components, that means the agency is the component. So we
     // double-check that the agency's abbreviation is also an agency component
@@ -44,6 +45,13 @@ for (const file of files) {
         const drupalAgencyComponents = drupal.getAgencyComponentsForAgency(agency)
         if (!drupalAgencyComponents.includes(agency)) {
             console.log('WARNING: Agency ' + agency + ' appears to be centralized but there is not a matching component in Drupal.')
+        }
+    }
+    // Similarly, if there are any components with an identical abbreviation to
+    // the agency, print an alert. This can cause problems.
+    else {
+        if (fixedAgencyComponents.includes(agency)) {
+            console.log('WARNING: Agency ' + agency + ' appears to be decentralized but there is a component with an identical abbreviation.')
         }
     }
 
