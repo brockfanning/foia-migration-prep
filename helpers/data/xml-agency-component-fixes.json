@@ -108,6 +108,9 @@
   "FLRA": {
     "AUTHORITY": "Authority"
   },
+  "GSA": {
+    "GSA - Main": "GSA-Main"
+  },
   "HUD": {
     "IG": "OIG"
   },

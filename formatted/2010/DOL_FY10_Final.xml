@@ -195,7 +195,7 @@
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG23">
             <nc:OrganizationAbbreviationText>
-                DOL-Main
+                DOL
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Department of Labor
