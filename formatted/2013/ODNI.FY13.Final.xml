@@ -344,7 +344,7 @@
         <foia:ComponentOtherDenialReason s:id="ADOR8">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    Appeal was for perceived "no records" response.  Per ODNI FOIA Regulations, appeals may not be submitted until a search is complete and decision regarding release is made.  Requester was notified of this and asked for patience while initial request was processed and/or early litigations.
+                    this-value-was-removed
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     2

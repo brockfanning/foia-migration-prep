@@ -303,7 +303,7 @@
         <foia:ComponentOtherDenialReason s:id="ADOR8">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    The records orginated from the White House Office (WHO). The Supreme Court has long held that the reference to the Executive Office in FOIA does not include the "Office of the President," which is also known as WHO. Therefore, fie to the WHO's  unique status, records originating from the WHO are  not subject to FOIA.
+                    this-value-was-removed
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     1

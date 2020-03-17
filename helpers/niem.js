@@ -424,6 +424,33 @@ function addBackloggedAppealComparisonSection(report) {
     }
 }
 
+function truncateOtherDenialReasonDescriptionText(report) {
+    const sections = [
+        'foia:RequestDenialOtherReasonSection',
+        'foia:AppealDenialOtherReasonSection',
+    ]
+    const subsection = 'foia:ComponentOtherDenialReason'
+    const textFieldContainer = 'foia:OtherDenialReason'
+    const textField = 'foia:OtherDenialReasonDescriptionText'
+    for (const section of sections) {
+        if (!(subsection in report[section])) {
+            continue
+        }
+        if (!(textFieldContainer in report[section][subsection])) {
+            continue
+        }
+        if (!(textField in report[section][subsection][textFieldContainer])) {
+            continue
+        }
+        const descriptionText = report[section][subsection][textFieldContainer][textField]['$t']
+        if (String(descriptionText).length > 255) {
+            console.log('WARNING: the following text was removed from the XML and will need to be added later!')
+            console.log(descriptionText)
+            report[section][subsection][textFieldContainer][textField]['$t'] = 'this-value-was-removed'
+        }
+    }
+}
+
 // ****************** HELPER FUNCTIONS **************************
 
 // Get a blank object for processed comparisons.
@@ -568,4 +595,5 @@ module.exports = {
   addBackloggedRequestComparisonSection,
   addProcessedAppealComparisonSection,
   addBackloggedAppealComparisonSection,
+  truncateOtherDenialReasonDescriptionText,
 }

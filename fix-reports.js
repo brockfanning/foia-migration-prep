@@ -83,6 +83,9 @@ for (const file of files) {
     niem.addProcessedAppealComparisonSection(report)
     niem.addBackloggedAppealComparisonSection(report)
 
+    // Truncate any too-long fields.
+    niem.truncateOtherDenialReasonDescriptionText(report)
+
     // Export the JSON object back into XML.
     const stringified = JSON.stringify(json)
     const xmlPrefix = '<?xml version="1.0"?>'
