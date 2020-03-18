@@ -1726,7 +1726,7 @@
         <foia:ComponentOtherDenialReason s:id="CODR25">
             <foia:OtherDenialReason>
                 <foia:OtherDenialReasonDescriptionText>
-                    NOT FOIA-  16, Records lost-  2, No written authorization to access records- 4, No proof of ID- 25, Appealed prior to determination- 1, Records previously furnished- 1, Handled via phone exclusively- 4, Records destroyed/records retention-  4, Closed w/o determination-15, Records referred at initial request level- 1
+                    this-value-was-removed
                 </foia:OtherDenialReasonDescriptionText>
                 <foia:OtherDenialReasonQuantity>
                     73
