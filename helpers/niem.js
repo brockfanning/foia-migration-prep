@@ -436,22 +436,34 @@ function truncateOtherDenialReasonDescriptionText(report) {
         if (!(subsection in report[section])) {
             continue
         }
-        if (!(textFieldContainer in report[section][subsection])) {
-            continue
+        if (Array.isArray(report[section][subsection])) {
+            for (const item of report[section][subsection]) {
+                truncateField(item, textFieldContainer, textField)
+            }
         }
-        if (!(textField in report[section][subsection][textFieldContainer])) {
-            continue
-        }
-        const descriptionText = report[section][subsection][textFieldContainer][textField]['$t']
-        if (String(descriptionText).length > 255) {
-            console.log('WARNING: the following text was removed from the XML and will need to be added later!')
-            console.log(descriptionText)
-            report[section][subsection][textFieldContainer][textField]['$t'] = 'this-value-was-removed'
+        else {
+            truncateField(report[section][subsection], textFieldContainer, textField)
         }
     }
 }
 
 // ****************** HELPER FUNCTIONS **************************
+
+// Truncate a field.
+function truncateField(item, container, field) {
+    if (!(container in item)) {
+        return
+    }
+    if (!(field in item[container])) {
+        return
+    }
+    const descriptionText = item[container][field]['$t']
+    if (String(descriptionText).length > 255) {
+        console.log('WARNING: the following text was removed from the XML and will need to be added later!')
+        console.log(descriptionText)
+        item[container][field]['$t'] = 'this-value-was-removed'
+    }
+}
 
 // Get a blank object for processed comparisons.
 function getProcessedComparisons() {
