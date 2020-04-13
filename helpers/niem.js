@@ -8,6 +8,52 @@ function setAgency(report, abbreviation) {
     return report['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = abbreviation
 }
 
+function removeUnusedComponents(report) {
+
+    if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
+        // This agency has no components, so we are done.
+        return
+    }
+
+    let agencyComponentElements = report['nc:Organization']['nc:OrganizationSubUnit']
+
+    // Make sure if is an array.
+    if (!Array.isArray(agencyComponentElements)) {
+        agencyComponentElements = [agencyComponentElements]
+    }
+
+    // Otherwise assume it is an array of objects.
+    const orgs = agencyComponentElements.map(element => element['s:id'])
+    const unusedOrgs = []
+    const json = JSON.stringify(report)
+    for (const org of orgs) {
+        const usage = (json.match(new RegExp(org, "g")) || []).length
+        if (usage <= 1) {
+            unusedOrgs.push(org)
+        }
+    }
+
+    if (unusedOrgs.length) {
+        console.log(report['nc:Organization']['nc:OrganizationSubUnit'].length)
+    }
+
+    report['nc:Organization']['nc:OrganizationSubUnit'] = agencyComponentElements.filter(element => {
+        const org = element['s:id']
+        if (unusedOrgs.includes(org)) {
+            const orgAbbrev = element['nc:OrganizationAbbreviationText']['$t']
+            console.log('Org ' + org + ', ' + orgAbbrev + ', was unused.')
+            return false
+        }
+        else {
+            return true
+        }
+    })
+
+    if (unusedOrgs.length) {
+        console.log(report['nc:Organization']['nc:OrganizationSubUnit'].length)
+    }
+}
+
 function getAgencyComponents(report) {
 
     if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
@@ -581,6 +627,7 @@ function getProcessedRequests() {
 module.exports = {
   getAgency,
   setAgency,
+  removeUnusedComponents,
   getAgencyComponents,
   replaceAgencyComponent,
   fixDocumentFiscalYearDate,

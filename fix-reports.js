@@ -30,6 +30,9 @@ for (const file of files) {
     const agency = drupal.fixAgency(niem.getAgency(report))
     niem.setAgency(report, agency)
 
+    // Remove components with no data.
+    niem.removeUnusedComponents(report)
+
     // Fix all the agency components.
     const niemAgencyComponents = niem.getAgencyComponents(report)
     for (const niemAgencyComponent of niemAgencyComponents) {
