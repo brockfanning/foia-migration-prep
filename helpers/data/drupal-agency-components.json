@@ -66,28 +66,10 @@
     "name": "Special Inspector General for Iraq Reconstruction"
   },
   {
-    "title": "Agency Overall Total",
-    "field_agency_comp_abbreviation": "AGENCY",
-    "field_agency_abbreviation": "EEOC",
-    "name": "Equal Employment Opportunity Commission"
-  },
-  {
-    "title": "Freedom of Information Act (FOIA)",
-    "field_agency_comp_abbreviation": "FOIA",
-    "field_agency_abbreviation": "EEOC",
-    "name": "Equal Employment Opportunity Commission"
-  },
-  {
     "title": "Office of Management and Administrative Programs",
     "field_agency_comp_abbreviation": "OMAP",
     "field_agency_abbreviation": "DOL",
     "name": "Department of Labor"
-  },
-  {
-    "title": "Office of Inspector General",
-    "field_agency_comp_abbreviation": "OIG",
-    "field_agency_abbreviation": "CNCS",
-    "name": "Corporation for National and Community Service"
   },
   {
     "title": "Office of Management",
@@ -132,12 +114,6 @@
     "name": "Department of Health and Human Services"
   },
   {
-    "title": "Postal Inspection Service and Office of Inspector General",
-    "field_agency_comp_abbreviation": "PIS and OIG",
-    "field_agency_abbreviation": "USPS",
-    "name": "United States Postal Service"
-  },
-  {
     "title": "Office of Inspector General Appeals only",
     "field_agency_comp_abbreviation": "OIG Appeals",
     "field_agency_abbreviation": "USPS",
@@ -160,66 +136,6 @@
     "field_agency_comp_abbreviation": "BOEMRE",
     "field_agency_abbreviation": "DOI",
     "name": "Department of the Interior"
-  },
-  {
-    "title": "Office of Public Affairs",
-    "field_agency_comp_abbreviation": "OPA",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Office of Legislative Affairs",
-    "field_agency_comp_abbreviation": "OLA",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Office of Health Affairs",
-    "field_agency_comp_abbreviation": "OHA",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "National Cyber Security Center",
-    "field_agency_comp_abbreviation": "NCSC",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Office of Intergovernmental Affairs",
-    "field_agency_comp_abbreviation": "IGA",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Office of the Executive Secretariat",
-    "field_agency_comp_abbreviation": "ESEC",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Domestic Nuclear Detection Office",
-    "field_agency_comp_abbreviation": "DNDO",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Office of Counternarcotics Enforcement",
-    "field_agency_comp_abbreviation": "CNE",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Citizenship and Immigration Services Ombudsman",
-    "field_agency_comp_abbreviation": "CISOMB",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
-  },
-  {
-    "title": "Chief Financial Officer",
-    "field_agency_comp_abbreviation": "CFO",
-    "field_agency_abbreviation": "DHS",
-    "name": "Department of Homeland Security"
   },
   {
     "title": "Federal Housing Finance Agency",
@@ -314,24 +230,6 @@
   {
     "title": "Program Support Center",
     "field_agency_comp_abbreviation": "PSC",
-    "field_agency_abbreviation": "HHS",
-    "name": "Department of Health and Human Services"
-  },
-  {
-    "title": "Public Health Service",
-    "field_agency_comp_abbreviation": "PHS",
-    "field_agency_abbreviation": "HHS",
-    "name": "Department of Health and Human Services"
-  },
-  {
-    "title": "Office of the Assistant Secretary for Public Affairs",
-    "field_agency_comp_abbreviation": "ASPA",
-    "field_agency_abbreviation": "HHS",
-    "name": "Department of Health and Human Services"
-  },
-  {
-    "title": "Agency for Toxic Substances and Disease Registry",
-    "field_agency_comp_abbreviation": "ATSDR",
     "field_agency_abbreviation": "HHS",
     "name": "Department of Health and Human Services"
   },
