@@ -25,14 +25,6 @@
                 U.S. Customs and Border Protection
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG2">
-            <nc:OrganizationAbbreviationText>
-                CRCL
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Office for Civil Rights and Civil Liberties
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG3">
             <nc:OrganizationAbbreviationText>
                 FEMA

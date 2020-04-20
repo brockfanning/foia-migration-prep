@@ -201,14 +201,6 @@
                 Office of the Secretary
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG24">
-            <nc:OrganizationAbbreviationText>
-                JOB CORP
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Job Corp
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG25">
             <nc:OrganizationAbbreviationText>
                 EXEC SEC

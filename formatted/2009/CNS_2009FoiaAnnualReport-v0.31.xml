@@ -25,14 +25,6 @@
                 Office of General Counsel
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG2">
-            <nc:OrganizationAbbreviationText>
-                OIG
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Office of Inspector General
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
     </nc:Organization>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">

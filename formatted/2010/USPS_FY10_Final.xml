@@ -65,14 +65,6 @@
                 Office of Inspector General Appeals only
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG7">
-            <nc:OrganizationAbbreviationText>
-                PIS and OIG
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Postal Inspection Service and Office of Inspector General
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
     </nc:Organization>
     <foia:Exemption3StatuteSection>
         <foia:ReliedUponStatute s:id="ES8">

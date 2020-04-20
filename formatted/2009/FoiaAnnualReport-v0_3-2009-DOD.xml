@@ -57,14 +57,6 @@
                 U.S. Central Command
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG6">
-            <nc:OrganizationAbbreviationText>
-                SOCOM
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Combantant Command
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG7">
             <nc:OrganizationAbbreviationText>
                 DCAA

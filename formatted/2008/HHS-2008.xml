@@ -73,14 +73,6 @@
                 Centers for Disease Control and Prevention
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG8">
-            <nc:OrganizationAbbreviationText>
-                ATSDR
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Agency for Toxic Substances and Disease Registry
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG9">
             <nc:OrganizationAbbreviationText>
                 FDA
@@ -119,22 +111,6 @@
             </nc:OrganizationAbbreviationText>
             <nc:OrganizationName>
                 Substance Abuse and Mental Health Services Administration
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG14">
-            <nc:OrganizationAbbreviationText>
-                ASPA
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Office of the Assistant Secretary for Public Affairs
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG15">
-            <nc:OrganizationAbbreviationText>
-                PHS
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Public Health Service
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
         <nc:OrganizationSubUnit s:id="ORG16">

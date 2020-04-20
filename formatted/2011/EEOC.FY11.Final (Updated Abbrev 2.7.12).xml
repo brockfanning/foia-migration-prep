@@ -153,30 +153,6 @@
                 Washington Field Office
             </nc:OrganizationName>
         </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG18">
-            <nc:OrganizationAbbreviationText>
-                FOIA
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Freedom of Information Act (FOIA)
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG19">
-            <nc:OrganizationAbbreviationText>
-                OLC/HDQ
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Headquarters
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
-        <nc:OrganizationSubUnit s:id="ORG20">
-            <nc:OrganizationAbbreviationText>
-                AGENCY
-            </nc:OrganizationAbbreviationText>
-            <nc:OrganizationName>
-                Agency Overall Total
-            </nc:OrganizationName>
-        </nc:OrganizationSubUnit>
     </nc:Organization>
     <foia:DocumentFiscalYearDate>
         2011
