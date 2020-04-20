@@ -31,6 +31,17 @@ for (const file of files) {
     niem.setAgency(report, agency)
 
     // Remove components with no data.
+    const unusedComponents = niem.getUnusedComponents(report)
+    // Temp output so we can delete any unneeded agency components in Drupal.
+    const unusedDrupalComponents = unusedComponents.map(component => {
+        const abbrev = drupal.fixAgencyComponent(component, agency)
+        return drupal.getAgencyComponentNameFromAbbreviation(abbrev, agency)
+    })
+    if (unusedDrupalComponents.length) {
+        console.log('Some unused components were removed. Check to see if these were created unnecessarily:')
+        console.log(unusedDrupalComponents)
+    }
+
     niem.removeUnusedComponents(report)
 
     // Fix all the agency components.

@@ -8,50 +8,40 @@ function setAgency(report, abbreviation) {
     return report['nc:Organization']['nc:OrganizationAbbreviationText']['$t'] = abbreviation
 }
 
-function removeUnusedComponents(report) {
+function getUnusedComponents(report, remove=false) {
 
     if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
         // This agency has no components, so we are done.
-        return
+        return []
     }
 
-    let agencyComponentElements = report['nc:Organization']['nc:OrganizationSubUnit']
+    let elements = report['nc:Organization']['nc:OrganizationSubUnit']
 
-    // Make sure if is an array.
-    if (!Array.isArray(agencyComponentElements)) {
-        agencyComponentElements = [agencyComponentElements]
+    // Make sure it is an array.
+    if (!Array.isArray(elements)) {
+        elements = [elements]
     }
 
-    // Otherwise assume it is an array of objects.
-    const orgs = agencyComponentElements.map(element => element['s:id'])
-    const unusedOrgs = []
+    // Quick and dirty way to determine usage of component orgs.
+    const orgs = elements.map(el => el['s:id'])
     const json = JSON.stringify(report)
-    for (const org of orgs) {
-        const usage = (json.match(new RegExp(org, "g")) || []).length
-        if (usage <= 1) {
-            unusedOrgs.push(org)
-        }
-    }
-
-    if (unusedOrgs.length) {
-        console.log(report['nc:Organization']['nc:OrganizationSubUnit'].length)
-    }
-
-    report['nc:Organization']['nc:OrganizationSubUnit'] = agencyComponentElements.filter(element => {
-        const org = element['s:id']
-        if (unusedOrgs.includes(org)) {
-            const orgAbbrev = element['nc:OrganizationAbbreviationText']['$t']
-            console.log('Org ' + org + ', ' + orgAbbrev + ', was unused.')
-            return false
-        }
-        else {
-            return true
-        }
+    const unusedOrgs = orgs.filter(org => {
+        const pattern = '"s:ref":"' + org + '"'
+        return (json.match(new RegExp(pattern, "g")) || []).length < 1
     })
 
-    if (unusedOrgs.length) {
-        console.log(report['nc:Organization']['nc:OrganizationSubUnit'].length)
+    const usedElements = elements.filter(el => !unusedOrgs.includes(el['s:id']))
+    const unusedElements = elements.filter(el => unusedOrgs.includes(el['s:id']))
+
+    if (remove) {
+        report['nc:Organization']['nc:OrganizationSubUnit'] = usedElements
     }
+
+    return unusedElements.map(el => el['nc:OrganizationAbbreviationText']['$t'])
+}
+
+function removeUnusedComponents(report) {
+    getUnusedComponents(report, true)
 }
 
 function getAgencyComponents(report) {
@@ -627,6 +617,7 @@ function getProcessedRequests() {
 module.exports = {
   getAgency,
   setAgency,
+  getUnusedComponents,
   removeUnusedComponents,
   getAgencyComponents,
   replaceAgencyComponent,

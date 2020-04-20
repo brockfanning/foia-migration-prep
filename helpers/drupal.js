@@ -104,6 +104,13 @@ function getAgencyNameFromAbbreviation(abbreviation) {
     return matches[0].name
 }
 
+function getAgencyComponentNameFromAbbreviation(abbreviation, agency) {
+    return drupalComponents.find(component => {
+        return component.field_agency_comp_abbreviation === abbreviation &&
+               component.field_agency_abbreviation === agency
+    })
+}
+
 module.exports = {
     fixAgency,
     fixAgencyComponent,
@@ -111,4 +118,5 @@ module.exports = {
     getAgencyNameFromAbbreviation,
     getAgencies,
     getAgencyComponents,
+    getAgencyComponentNameFromAbbreviation,
 }
