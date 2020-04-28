@@ -44,6 +44,44 @@ function removeUnusedComponents(report) {
     getUnusedComponents(report, true)
 }
 
+function isAgencyCentralized(report) {
+    if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
+        // This agency has no components, so we are done.
+        return true
+    }
+
+    let agencyComponentElements = report['nc:Organization']['nc:OrganizationSubUnit']
+
+    // Sometimes it is not an array, just a single object.
+    if (!Array.isArray(agencyComponentElements)) {
+        agencyComponentElements = [agencyComponentElements['nc:OrganizationAbbreviationText']['$t']]
+    }
+
+    const agencyComponentAbbreviations = agencyComponentElements.map(el => {
+        return el['nc:OrganizationAbbreviationText']['$t']
+    })
+
+    // We need to remove the agency itself from the subunits, if it is there.
+    const agency = getAgency(report);
+    const agencyComponentAbbreviationsWithoutAgency = agencyComponentAbbreviations.filter(abbrev => abbrev !== agency)
+
+    if (agencyComponentAbbreviationsWithoutAgency.length === 0) {
+        return true;
+    }
+
+    // If still here, there are multiple orgs, so this is probably not
+    // centralized. But first check for unused components. If all the
+    // components are unused, then this actually can be considered to be
+    // centralized.
+    const unused = getUnusedComponents(report)
+    if (agencyComponentAbbreviationsWithoutAgency.every(abbrev => unused.includes(abbrev))) {
+        return true;
+    }
+
+    // Finally if still here, this is decentralized for sure.
+    return false;
+}
+
 function getAgencyComponents(report) {
 
     if (!('nc:OrganizationSubUnit' in report['nc:Organization'])) {
@@ -617,6 +655,7 @@ function getProcessedRequests() {
 module.exports = {
   getAgency,
   setAgency,
+  isAgencyCentralized,
   getUnusedComponents,
   removeUnusedComponents,
   getAgencyComponents,

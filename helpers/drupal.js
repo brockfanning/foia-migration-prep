@@ -111,6 +111,10 @@ function getAgencyComponentNameFromAbbreviation(abbreviation, agency) {
     })
 }
 
+function isAgencyCentralized(agency) {
+    return getAgencyComponentsForAgency(agency).length < 2
+}
+
 module.exports = {
     fixAgency,
     fixAgencyComponent,
@@ -119,4 +123,5 @@ module.exports = {
     getAgencies,
     getAgencyComponents,
     getAgencyComponentNameFromAbbreviation,
+    isAgencyCentralized,
 }

@@ -41,20 +41,31 @@ for (const file of files) {
     }
     const fixedAgencyComponents = niem.getAgencyComponents(report)
 
+    // In some cases, there is a single component ("org") which is the same
+    // as the agency - meaning it is decentralized.
+    const centralizedInXml = niem.isAgencyCentralized(report);
+    const centralizedInDrupal = drupal.isAgencyCentralized(agency);
+
+    if (centralizedInXml !== centralizedInDrupal) {
+        console.log('WARNING: Agency - ' + agency)
+        console.log(' -- centralized in XML? ' + centralizedInXml)
+        console.log(' -- centralized in Drupal? ' + centralizedInDrupal)
+    }
+
     // If we had no components, that means the agency is the component. So we
     // double-check that the agency's abbreviation is also an agency component
     // abbreviation, and if not print a warning.
-    if (niemAgencyComponents.length == 0) {
+    if (centralizedInXml) {
         const drupalAgencyComponents = drupal.getAgencyComponentsForAgency(agency)
         if (!drupalAgencyComponents.includes(agency)) {
-            console.log('WARNING: Agency ' + agency + ' appears to be centralized but there is not a matching component in Drupal.')
+            console.log('WARNING: Agency ' + agency + ' appears to be centralized in the XML but there is not a matching component in Drupal.')
         }
     }
     // Similarly, if there are any components with an identical abbreviation to
     // the agency, print an alert. This can cause problems.
     else {
         if (fixedAgencyComponents.includes(agency)) {
-            console.log('WARNING: Agency ' + agency + ' appears to be decentralized but there is a component with an identical abbreviation.')
+            console.log('WARNING: Agency ' + agency + ' appears to be decentralized in the XML but there is a component with an identical abbreviation.')
         }
     }
 
