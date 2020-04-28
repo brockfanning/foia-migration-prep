@@ -1,0 +1,30 @@
+* Check for orgs with no data, and do not treat them as components.
+
+1. Revisit code that identifies orgs not in Drupal.
+   * Clear out the abbreviation mappings (temporarily)
+
+2. Update code so that it identifies orgs not in Drupal which do NOT have data
+   * Looking for abbreviations in XML that do not match abbreviations in Drupal
+   * AND do not have data in XML
+   * At this point, all abbreviations DO have matches in Drupal:
+
+3. Compare this list with the list of orgs we created (Google Doc)
+4. Delete any necessary, and remove from abbreviation mappings if needed
+5. Restore the abbreviation mappings
+6. Add code that removes orgs without data from the XML
+7. Run that code and push changes.
+
+* Alerts on the decentralized/centralized problems
+
+
+* Start/end year script
+ 
+
+Added " - Main" to these:
+* Department of State
+* National Science Foundation
+* Department of Labor
+* Railroad Retirement Board
+
+Deleted:
+* node/9821/delete
