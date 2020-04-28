@@ -478,5 +478,9 @@
   {
     "name": "U.S. International Development Finance Corporation",
     "field_agency_abbreviation": "DFC"
+  },
+  { 
+    "name": "Recovery Accountability and Transparency Board",
+    "field_agency_abbreviation": "RATB"
   }
 ]
