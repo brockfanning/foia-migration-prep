@@ -136,6 +136,47 @@ function fixDocumentFiscalYearDate(report) {
     }
 }
 
+function fixMissingItems(report) {
+    const sections = [
+        'foia:ProcessedRequestComparisonSection',
+        'foia:ProcessedAppealComparisonSection',
+    ]
+    const subsection = 'foia:ProcessingComparison'
+    const changes = {
+        'foia:ReceivedLastYearQuantity': 'foia:ItemsReceivedLastYearQuantity',
+        'foia:ReceivedCurrentYearQuantity': 'foia:ItemsReceivedCurrentYearQuantity',
+        'foia:ProcessedLastYearQuantity': 'foia:ItemsProcessedLastYearQuantity',
+        'foia:ProcessedCurrentYearQuantity': 'foia:ItemsProcessedCurrentYearQuantity',
+    }
+    const keysToChange = Object.keys(changes)
+    for (const section of sections) {
+        if (section in report) {
+            if (subsection in report[section]) {
+                if (!Array.isArray(report[section][subsection])) {
+                    for (const key of Object.keys(report[section][subsection])) {
+                        if (keysToChange.includes(key)) {
+                            const newKey = changes[key]
+                            report[section][subsection][newKey] = report[section][subsection][key]
+                            delete report[section][subsection][key]
+                        }
+                    }
+                }
+                else {
+                    for (const item of report[section][subsection]) {
+                        for (const key of Object.keys(item)) {
+                            if (keysToChange.includes(key)) {
+                                const newKey = changes[key]
+                                item[newKey] = item[key]
+                                delete item[key]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 function addOldItemSections(report) {
     const sections = {
         'foia:OldestPendingAppealSection': 'OPA10',
@@ -661,6 +702,7 @@ module.exports = {
   getAgencyComponents,
   replaceAgencyComponent,
   fixDocumentFiscalYearDate,
+  fixMissingItems,
   addOldItemSections,
   addExemption3StatuteSection,
   addRequestDenialOtherReasonSection,

@@ -72,6 +72,9 @@ for (const file of files) {
     // Fix the DocumentFiscalYearDate.
     niem.fixDocumentFiscalYearDate(report)
 
+    // Fix the missing "Items" problem.
+    niem.fixMissingItems(report)
+
     // Fix any elements missing content.
     niem.addOldItemSections(report)
     niem.addExemption3StatuteSection(report)
