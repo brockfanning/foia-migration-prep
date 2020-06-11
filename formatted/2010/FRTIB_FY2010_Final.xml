@@ -908,18 +908,18 @@
     </foia:OldestPendingConsultationSection>
     <foia:ProcessedRequestComparisonSection>
         <foia:ProcessingComparison s:id="RPC1">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 19
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 22
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 2
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 22
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparisonOrganizationAssociation>
             <foia:ComponentDataReference s:ref="RPC1">

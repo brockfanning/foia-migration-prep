@@ -3447,60 +3447,60 @@
     </foia:OldestPendingConsultationSection>
     <foia:ProcessedRequestComparisonSection>
         <foia:ProcessingComparison s:id="RPC1">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 1165
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 1138
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 1630
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 1164
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC2">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 2047
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 1608
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 5802
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 1673
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC3">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 272
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 253
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 229
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 229
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC0">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 3484
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 2999
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 7661
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 3066
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparisonOrganizationAssociation>
             <foia:ComponentDataReference s:ref="RPC1">
@@ -3587,32 +3587,32 @@
     </foia:BackloggedRequestComparisonSection>
     <foia:ProcessedAppealComparisonSection>
         <foia:ProcessingComparison s:id="APC1">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 45
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 39
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 43
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 41
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="APC0">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 45
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 39
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 43
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 41
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparisonOrganizationAssociation>
             <foia:ComponentDataReference s:ref="APC1">

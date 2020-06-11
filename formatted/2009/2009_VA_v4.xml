@@ -19020,368 +19020,368 @@
     </foia:OldestPendingConsultationSection>
     <foia:ProcessedRequestComparisonSection>
         <foia:ProcessingComparison s:id="RPC1">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC2">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 20
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 18
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 20
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 15
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC3">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 4
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 2
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC4">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 50
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 65
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 43
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 66
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC5">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 55
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 63
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 53
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 49
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC6">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 6
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 8
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 5
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 5
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC7">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 173
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 319
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 210
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 303
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC8">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 1
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 7
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 1
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 7
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC9">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 72
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 287
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 70
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 252
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC10">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 151
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 204
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 100
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 353
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC11">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC12">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 3
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 3
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC13">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC14">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC15">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 15
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 6
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 15
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 3
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC16">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 130
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 234
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 133
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 194
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC17">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 3
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 8
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 3
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 6
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC18">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC19">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 8
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 10
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 8
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 10
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC20">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 1
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 2
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 1
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC21">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC22">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 9
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 6
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 9
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 2
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC23">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 23076
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 6845
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 23213
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 6094
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC24">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 0
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 0
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 0
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 0
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC25">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 75563
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 61343
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 74571
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 64123
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="RPC0">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 99333
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 69432
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 98455
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 71487
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparisonOrganizationAssociation>
             <foia:ComponentDataReference s:ref="RPC1">
@@ -19908,32 +19908,32 @@
     </foia:BackloggedRequestComparisonSection>
     <foia:ProcessedAppealComparisonSection>
         <foia:ProcessingComparison s:id="APC1">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 157
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 241
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 230
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 87
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparison s:id="APC0">
-            <foia:ReceivedLastYearQuantity>
+            <foia:ItemsReceivedLastYearQuantity>
                 157
-            </foia:ReceivedLastYearQuantity>
-            <foia:ReceivedCurrentYearQuantity>
+            </foia:ItemsReceivedLastYearQuantity>
+            <foia:ItemsReceivedCurrentYearQuantity>
                 241
-            </foia:ReceivedCurrentYearQuantity>
-            <foia:ProcessedLastYearQuantity>
+            </foia:ItemsReceivedCurrentYearQuantity>
+            <foia:ItemsProcessedLastYearQuantity>
                 230
-            </foia:ProcessedLastYearQuantity>
-            <foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedLastYearQuantity>
+            <foia:ItemsProcessedCurrentYearQuantity>
                 87
-            </foia:ProcessedCurrentYearQuantity>
+            </foia:ItemsProcessedCurrentYearQuantity>
         </foia:ProcessingComparison>
         <foia:ProcessingComparisonOrganizationAssociation>
             <foia:ComponentDataReference s:ref="APC1">
