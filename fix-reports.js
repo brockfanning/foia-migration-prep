@@ -99,6 +99,8 @@ for (const file of files) {
     niem.addBackloggedRequestComparisonSection(report)
     niem.addProcessedAppealComparisonSection(report)
     niem.addBackloggedAppealComparisonSection(report)
+    niem.addProcessedAppealSection(report)
+    niem.addAppealDispositionSection(report)
 
     // Truncate any too-long fields.
     niem.truncateOtherDenialReasonDescriptionText(report)

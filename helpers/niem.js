@@ -301,6 +301,41 @@ function addProcessedConsultationSection(report) {
     }
 }
 
+function addProcessedAppealSection(report) {
+    const section = 'foia:ProcessedAppealSection'
+    const sectionId = 'PA1'
+    const subsection = 'foia:ProcessingStatistics'
+    const orgAssociation = 'foia:ProcessingStatisticsOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:ProcessingStatisticsPendingAtStartQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsReceivedQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsProcessedQuantity': { '$t': 0 },
+            'foia:ProcessingStatisticsPendingAtEndQuantity': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
+function addAppealDispositionSection(report) {
+    const section = 'foia:AppealDispositionSection'
+    const sectionId = 'AD1'
+    const subsection = 'foia:AppealDisposition'
+    const orgAssociation = 'foia:AppealDispositionOrganizationAssociation'
+    if (!(subsection in report[section])) {
+        report[section][subsection] = {
+            's:id': sectionId,
+            'foia:AppealDispositionAffirmedQuantity': { '$t': 0 },
+            'foia:AppealDispositionPartialQuantity': { '$t': 0 },
+            'foia:AppealDispositionReversedQuantity': { '$t': 0 },
+            'foia:AppealDispositionOtherQuantity': { '$t': 0 },
+            'foia:AppealDispositionTotalQuantity': { '$t': 0 },
+        }
+        report[section][orgAssociation] = getOrgAssociation(sectionId)
+    }
+}
+
 function addAppealNonExemptionDenialSection(report) {
     const section = 'foia:AppealNonExemptionDenialSection'
     const sectionId = 'ANE1'
@@ -709,6 +744,8 @@ module.exports = {
   addComponentAppliedExemptions,
   addAppealDenialOtherReasonSection,
   addProcessedConsultationSection,
+  addProcessedAppealSection,
+  addAppealDispositionSection,
   addAppealNonExemptionDenialSection,
   addComplexResponseTimeIncrementsSection,
   addAppealResponseTimeSection,

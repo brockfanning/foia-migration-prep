@@ -199,6 +199,29 @@
         </foia:ProcessingStatisticsOrganizationAssociation>
     </foia:ProcessedAppealSection>
     <foia:AppealDispositionSection>
+        <foia:AppealDisposition s:id="AD1">
+            <foia:AppealDispositionAffirmedQuantity>
+                0
+            </foia:AppealDispositionAffirmedQuantity>
+            <foia:AppealDispositionPartialQuantity>
+                0
+            </foia:AppealDispositionPartialQuantity>
+            <foia:AppealDispositionReversedQuantity>
+                0
+            </foia:AppealDispositionReversedQuantity>
+            <foia:AppealDispositionOtherQuantity>
+                0
+            </foia:AppealDispositionOtherQuantity>
+            <foia:AppealDispositionTotalQuantity>
+                0
+            </foia:AppealDispositionTotalQuantity>
+        </foia:AppealDisposition>
+        <foia:AppealDispositionOrganizationAssociation>
+            <foia:ComponentDataReference s:ref="AD1">
+            </foia:ComponentDataReference>
+            <nc:OrganizationReference s:ref="ORG0">
+            </nc:OrganizationReference>
+        </foia:AppealDispositionOrganizationAssociation>
     </foia:AppealDispositionSection>
     <foia:AppealDispositionAppliedExemptionsSection>
         <foia:ComponentAppliedExemptions s:id="ADE1">
